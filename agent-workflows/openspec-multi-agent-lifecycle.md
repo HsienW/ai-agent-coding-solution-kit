@@ -1,6 +1,6 @@
-﻿[English](./openspec-multi-agent-lifecycle.md) | [繁體中文](./openspec-multi-agent-lifecycle-zh-TW.md)
+﻿# OpenSpec Multi-Agent Lifecycle
 
-# OpenSpec Multi-Agent Lifecycle
+[English](./openspec-multi-agent-lifecycle.md) | [繁體中文](./openspec-multi-agent-lifecycle-zh-TW.md)
 
 This lifecycle describes a tool-neutral workflow for OpenSpec / SDD projects. It separates planning, review, implementation, readiness, and archive so each agent reads only the prompt and context needed for its current stage.
 

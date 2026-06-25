@@ -1,6 +1,6 @@
-﻿[English](./openspec-multi-agent-lifecycle.md) | [繁體中文](./openspec-multi-agent-lifecycle-zh-TW.md)
+﻿# OpenSpec Multi-Agent Lifecycle
 
-# OpenSpec Multi-Agent Lifecycle
+[English](./openspec-multi-agent-lifecycle.md) | [繁體中文](./openspec-multi-agent-lifecycle-zh-TW.md)
 
 這份 lifecycle 描述一套不綁定特定工具的 OpenSpec / SDD 工作流。它把計劃、審查、實作、完成判定與封存拆開，讓每個 agent 只讀當前階段需要的 prompt 與上下文。
 
