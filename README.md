@@ -13,8 +13,9 @@
 * **OpenSpec / SDD**：需求研究、規格設計、任務拆解、Change 管理與驗收流程
 * **Context Engineering**：上下文路由、漸進式披露、記憶設計與長任務管理
 * **Prompt Engineering**：研究、規劃、開發、Review 與除錯 Prompt
-* **AI Coding Workflows**：Claude Code、Codex CLI、Gemini CLI 等工具的協作模式
+* **Agent Workflows**：Claude Code、Codex CLI、Gemini CLI 等工具的協作模式
 * **Reusable Assets**：通用 Markdown 文件、模板、Checklist、Agent 規則與 Prompt
+* **Shared**：通用跨角色、跨流程會重複使用的共享規則文件
 
 ## 📂 Repository Structure
 
