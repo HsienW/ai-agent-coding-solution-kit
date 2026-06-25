@@ -1,13 +1,13 @@
 # 🎓 AI Agent Code Solution Kit
 
 > 一個持續更新的 AI Agent Coding 文件、模板與工程實踐知識庫。  
-> English: A continuously updated knowledge base for AI Agent Coding documents, templates, and engineering practices.
+> A continuously updated knowledge base for AI Agent Coding documents, templates, and engineering practices.
 
 本倉庫用於整理我在 AI Agent 開發與 AI 輔助編程過程中，實際研究、使用與驗證過的文件、Prompt、模板、規範與工作流程。
 
 目標是將零散經驗逐步沉澱成可閱讀、可複用、可持續維護的工程資產，方便應用在個人專案或團隊開發流程中。
 
-English: This repository collects practical AI Agent Coding knowledge and turns it into reusable engineering assets for personal and team workflows.
+This repository collects practical AI Agent Coding knowledge and turns it into reusable engineering assets for personal and team workflows.
 
 ## 📚 主要內容
 
@@ -20,7 +20,7 @@ English: This repository collects practical AI Agent Coding knowledge and turns 
 * **Reusable Assets**：通用 Markdown 文件、模板、Checklist、Agent 規則與 Prompt
 * **Shared**：通用跨角色、跨流程會重複使用的共享規則文件
 
-English: The repository focuses on OpenSpec / SDD, Context Engineering, Prompt Engineering, AI Agent workflows, reusable assets, and shared rules.
+The repository focuses on OpenSpec / SDD, Context Engineering, Prompt Engineering, AI Agent workflows, reusable assets, and shared rules.
 
 ## 📂 Repository Structure
 
@@ -51,7 +51,7 @@ ai-agent-code-solution-kit/
 * `patterns`：可跨專案複用的設計模式
 * `archive`：已過時但仍具有參考價值的內容
 
-English: Content is organized by purpose, including documentation, reusable templates, prompts, patterns, and archived references.
+Content is organized by purpose, including documentation, reusable templates, prompts, patterns, and archived references.
 
 ## 🌱 持續改進
 
@@ -59,4 +59,4 @@ English: Content is organized by purpose, including documentation, reusable temp
 
 所有內容主要來自個人研究與工程實踐，使用前仍建議根據實際模型、工具版本與專案環境進行驗證。
 
-English: This repository will continue to evolve with AI Coding Agent practices, and all content should be validated against the actual model, tool version, and project environment before use.
+This repository will continue to evolve with AI Coding Agent practices, and all content should be validated against the actual model, tool version, and project environment before use.
