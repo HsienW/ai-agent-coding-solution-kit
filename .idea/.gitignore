@@ -1,0 +1,25 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Ignored default folder with query files
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# IDE files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/ai-agent-coding-solution-kit.iml
+/encodings.xml
+/misc.xml
+/modules.xml
+/inspectionProfiles/Project_Default.xml
+/vcs.xml
