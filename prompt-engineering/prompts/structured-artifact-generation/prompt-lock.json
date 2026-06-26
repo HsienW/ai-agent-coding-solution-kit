@@ -1,0 +1,70 @@
+{
+  "lockVersion": 1,
+  "artifact": {
+    "id": "structured-artifact-generation",
+    "version": "1.0.0",
+    "domain": "offer_card"
+  },
+  "resolvedAt": "2026-06-27T00:00:00Z",
+  "files": {
+    "prompt.yaml": {
+      "sha256": "sha256:bdeca729c499b98f63ceda67feeafe85a7f5b687959d10220be22e4230faa066"
+    },
+    "prompt.md": {
+      "sha256": "sha256:765362fec04613c87aca4fc59108255a4b28eb277a568cda62b961b0094db3f9"
+    },
+    "prompt-zh-TW.md": {
+      "sha256": "sha256:295d9b0f59c236e8e390cfb38467c236d3fcaa28462cf2452504494b72b64ef3"
+    },
+    "input.schema.json": {
+      "sha256": "sha256:a2c1a1d5e5ccc37e61b8579b9ffb6106e22d50fbed52e1f6c21f3c02d46793b1"
+    },
+    "output.schema.json": {
+      "sha256": "sha256:bc574eb954f7b6ef7717464511703d086a6b6e8ab438ac3c21f4e7dceb17b02d"
+    },
+    "examples.yaml": {
+      "sha256": "sha256:4bba0604f345b4e1729a66bb11511bb6b52921ed1340a97d2f9de0ecaccef2c1"
+    },
+    "eval-cases.yaml": {
+      "sha256": "sha256:392da70444ead6eb812d0b0defbe3775cd4c805fe577b5784e04c0aec707fe67"
+    }
+  },
+  "dependencies": {
+    "domainRegistry": {
+      "id": "structured-ui-domain-registry",
+      "version": "1.0.0",
+      "sha256": "sha256:f90aac520f073ac981a08f313e6bcbd8c65872bd742a72ca68cd89e55a56c7bc"
+    },
+    "workflow": {
+      "id": "structured-artifact-workflow",
+      "version": "1.0.0",
+      "sha256": "sha256:6e0433de468389b6e85a6a3ed5876818250b9a5837ba81fee8d3f35eec5fc79a"
+    }
+  },
+  "resolvedValidators": [
+    {
+      "id": "json-schema-validator",
+      "version": "1.0.0",
+      "implementation": "runtime-provided"
+    },
+    {
+      "id": "offer-card-state-validator",
+      "version": "1.0.0",
+      "implementation": "runtime-provided"
+    },
+    {
+      "id": "offer-card-cross-domain-validator",
+      "version": "1.0.0",
+      "implementation": "runtime-provided"
+    }
+  ],
+  "evaluation": {
+    "dataset": "structured-artifact-generation-eval",
+    "version": "1.0.0",
+    "sha256": "sha256:392da70444ead6eb812d0b0defbe3775cd4c805fe577b5784e04c0aec707fe67"
+  },
+  "notice": {
+    "en": "Generated example snapshot. Regenerate after any referenced asset changes.",
+    "zh_tw": "這是已產生的範例 snapshot。任何 referenced asset 變更後都應重新產生。"
+  }
+}

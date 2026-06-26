@@ -1,0 +1,59 @@
+schema_version: 1
+id: structured-artifact-generation
+version: 1.0.0
+domain: offer_card
+task: generate_offer_card_spec
+
+description:
+  en: Generates a schema-valid offer-card artifact specification with explicit domain isolation.
+  zh_tw: 產生符合 schema 的 offer-card artifact specification，並明確隔離 domain。
+
+template:
+  default_locale: en
+  variants:
+    en: ./prompt.md
+    zh-TW: ./prompt-zh-TW.md
+
+contracts:
+  input: ./input.schema.json
+  output: ./output.schema.json
+
+examples:
+  file: ./examples.yaml
+  max_items: 1
+  selection: locale_then_similarity
+
+evaluation:
+  cases: ./eval-cases.yaml
+  minimum_cases: 7
+
+validators:
+  - id: json-schema-validator
+    version: 1.0.0
+  - id: offer-card-state-validator
+    version: 1.0.0
+  - id: offer-card-cross-domain-validator
+    version: 1.0.0
+
+policies:
+  context_strategy: smallest_sufficient
+  structured_output: required
+  untrusted_input: isolated
+  max_retries: 2
+  route_low_confidence: manual_review
+  release_requires_lockfile: true
+  release_requires_evaluation: true
+
+dependencies:
+  domain_registry:
+    id: structured-ui-domain-registry
+    version: 1.0.0
+    file: ../../templates/domain-registry.example.yaml
+  workflow:
+    id: structured-artifact-workflow
+    version: 1.0.0
+    file: ../../templates/workflow.example.yaml
+
+compatibility:
+  input_schema: 1.x
+  output_schema: 1.x

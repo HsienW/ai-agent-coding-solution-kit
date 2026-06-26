@@ -1,0 +1,59 @@
+# Prompt Package manifest example.
+# Prompt Package Manifest 範例。
+schema_version: 1
+
+id: example-prompt-package
+version: 1.0.0
+domain: example_domain
+task: generate_structured_artifact
+
+description:
+  en: Declares the versioned assets, policies, contracts, and evaluation inputs for one prompt capability.
+  zh_tw: 宣告單一 prompt capability 使用的版本化資產、policy、contract 與 evaluation input。
+
+template:
+  default_locale: en
+  variants:
+    en: ./prompt.md
+    zh-TW: ./prompt-zh-TW.md
+
+contracts:
+  input: ./input.schema.json
+  output: ./output.schema.json
+
+examples:
+  file: ./examples.yaml
+  max_items: 2
+  selection: domain_then_similarity
+
+evaluation:
+  cases: ./eval-cases.yaml
+  minimum_cases: 5
+
+validators:
+  - id: schema-validator
+    version: 1.0.0
+  - id: domain-state-validator
+    version: 1.0.0
+
+policies:
+  context_strategy: smallest_sufficient
+  structured_output: required
+  untrusted_input: isolated
+  max_retries: 2
+  release_requires_lockfile: true
+  release_requires_evaluation: true
+
+dependencies:
+  domain_registry:
+    id: example-domain-registry
+    version: 1.0.0
+    file: ../../templates/domain-registry.example.yaml
+  workflow:
+    id: example-workflow
+    version: 1.0.0
+    file: ../../templates/workflow.example.yaml
+
+compatibility:
+  input_schema: 1.x
+  output_schema: 1.x
