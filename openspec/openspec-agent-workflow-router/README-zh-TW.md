@@ -1,6 +1,6 @@
 ﻿# OpenSpec Agent Workflow Router
 
-[English](./overview.md) | [繁體中文](./overview-zh-TW.md)
+[English](./README.md) | [繁體中文](./README-zh-TW.md)
 
 ## 這是什麼
 
