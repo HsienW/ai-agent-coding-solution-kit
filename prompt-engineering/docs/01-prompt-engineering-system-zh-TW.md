@@ -1,10 +1,3 @@
----
-title: Prompt Engineering 作為工程系統 (從範本資產到受治理的 Workflow)
-version: 1.0.0
-status: reference-architecture
-language: zh-TW
----
-
 # Prompt Engineering 作為工程系統 (從範本資產到受治理的 Workflow)
 
 [English](./01-prompt-engineering-system.md) | [繁體中文](./01-prompt-engineering-system-zh-TW.md)

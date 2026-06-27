@@ -1,10 +1,3 @@
----
-title: Prompt Engineering as an Engineering System (From Template Assets to Governed Workflows)
-version: 1.0.0
-status: reference-architecture
-language: en
----
-
 # Prompt Engineering as an Engineering System: From Template Assets to Governed Workflows
 
 [English](./01-prompt-engineering-system.md) | [繁體中文](./01-prompt-engineering-system-zh-TW.md)
