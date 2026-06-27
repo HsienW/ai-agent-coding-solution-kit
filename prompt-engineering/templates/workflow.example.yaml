@@ -1,0 +1,95 @@
+# Declarative workflow example. The runner implements every node type.
+# Declarative workflow 範例；每一種 node type 都由 runner 實作。
+schema_version: 1
+id: structured-artifact-workflow
+version: 1.0.0
+
+description:
+  en: Routes a task to a skill, builds minimal context, generates a spec, validates it, generates an artifact, previews it, and gates release.
+  zh_tw: 將 task route 到 skill，建立最小 context，產生並驗證 spec，再產生 artifact、preview，並透過 gate 控制 release。
+
+input:
+  schema: ../prompts/structured-artifact-generation/input.schema.json
+
+context:
+  release_mode: experiment
+  max_retries: 2
+
+nodes:
+  - id: route_domain
+    type: domain_router
+    uses: structured-ui-domain-registry
+    with:
+      explicit_domain: ${input.domain}
+      artifact_type: ${input.artifactType}
+      payload: ${input}
+
+  - id: load_skill
+    type: skill_loader
+    with:
+      skill_id: ${nodes.route_domain.skill_id}
+
+  - id: build_context
+    type: context_builder
+    with:
+      strategy: smallest_sufficient
+      allowed_fields: ${nodes.load_skill.allowed_fields}
+      untrusted_context: ${input.untrustedContext}
+
+  - id: injection_guard
+    type: trust_boundary_guard
+    with:
+      instructions: ${nodes.load_skill.instructions}
+      untrusted_data: ${nodes.build_context.untrusted_data}
+
+  - id: generate_spec
+    type: llm
+    with:
+      prompt_package: ${nodes.load_skill.prompt_package}
+      prompt_variant: spec_generation
+      mode: structured_output
+
+  - id: validate_spec_schema
+    type: schema_validator
+    with:
+      schema: ${nodes.load_skill.output_schema}
+      data: ${nodes.generate_spec.output}
+
+  - id: validate_spec_domain
+    type: domain_validator
+    when: ${nodes.validate_spec_schema.valid}
+    uses: ${nodes.load_skill.domain_validator}
+    with:
+      data: ${nodes.generate_spec.output}
+
+  - id: generate_artifact
+    type: transformer
+    when: ${nodes.validate_spec_domain.valid}
+    uses: structured-spec-to-artifact
+
+  - id: preview
+    type: artifact_preview
+    with:
+      artifact: ${nodes.generate_artifact.output}
+
+  - id: run_evaluation
+    type: evaluation
+    when: ${context.release_mode == "formal"}
+    with:
+      prompt_package: ${nodes.load_skill.prompt_package}
+
+  - id: approval
+    type: human_approval
+    when: ${context.release_mode == "formal" && nodes.run_evaluation.passed}
+
+  - id: canary
+    type: release
+    when: ${nodes.approval.approved}
+    with:
+      rollout_percentage: 5
+
+fallbacks:
+  route_low_confidence: clarify
+  schema_failure: retry_with_compact_feedback
+  domain_failure: manual_review
+  retry_exhausted: manual_review

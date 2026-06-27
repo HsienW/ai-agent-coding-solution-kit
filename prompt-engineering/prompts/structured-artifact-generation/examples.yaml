@@ -1,0 +1,51 @@
+schema_version: 1
+examples:
+  - id: offer-card-basic-en
+    domain: offer_card
+    locale: en
+    description:
+      en: A normal offer card with available, activated, and expired states.
+      zh_tw: 一張一般 offer card，包含 available、activated 與 expired 三種 state。
+    input:
+      taskId: synthetic-offer-en-001
+      artifactType: offer_card
+      locale: en
+      requirements:
+        title: Seasonal Offer
+        description: A synthetic structured UI example.
+        states: [available, activated, expired]
+        fields: [title, amount, expiresAt, action]
+      designTokens:
+        density: compact
+        emphasis: medium
+    expected_invariants:
+      - artifactType equals offer_card
+      - consumed and use_now are absent
+      - available maps to activate_now
+      - activated maps to activated
+      - expired maps to disabled
+
+  - id: offer-card-basic-zh-tw
+    domain: offer_card
+    locale: zh-TW
+    description:
+      en: A Traditional Chinese offer-card example with the same domain contract.
+      zh_tw: 一個使用相同 domain contract 的繁體中文 offer-card 範例。
+    input:
+      taskId: synthetic-offer-zh-001
+      artifactType: offer_card
+      locale: zh-TW
+      requirements:
+        title: 範例優惠卡
+        description: 用於示範 Prompt Package 的合成 structured UI 範例。
+        states: [available, activated, expired]
+        fields: [title, amount, expiresAt, action]
+      designTokens:
+        density: comfortable
+        emphasis: high
+    expected_invariants:
+      - artifactType equals offer_card
+      - state labels use Traditional Chinese
+      - consumed and use_now are absent
+      - available maps to activate_now
+      - expired maps to disabled

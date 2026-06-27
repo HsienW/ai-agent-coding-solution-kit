@@ -1,0 +1,68 @@
+# Synthetic domain registry example.
+# 合成 Domain Registry 範例。
+schema_version: 1
+id: structured-ui-domain-registry
+version: 1.0.0
+
+description:
+  en: Keeps visually similar but semantically different structured UI artifacts isolated.
+  zh_tw: 隔離外觀相似但語意不同的 structured UI artifact。
+
+domains:
+  offer_card:
+    display_name:
+      en: Offer Card
+      zh_tw: 優惠卡
+    skill: structured-artifact-generation
+    explicit_values:
+      artifactType: offer_card
+    id_fields:
+      - offerId
+    status_enum:
+      - available
+      - activated
+      - expired
+    action_enum:
+      - activate_now
+      - activated
+      - disabled
+    forbidden_status:
+      - consumed
+    forbidden_action:
+      - use_now
+    validator: offer-card-state-validator
+    risk_level: medium
+
+  entitlement_card:
+    display_name:
+      en: Entitlement Card
+      zh_tw: 權益卡
+    skill: structured-entitlement-generation
+    explicit_values:
+      artifactType: entitlement_card
+    id_fields:
+      - entitlementId
+    status_enum:
+      - eligible
+      - active
+      - consumed
+      - expired
+    action_enum:
+      - use_now
+      - view_details
+      - disabled
+    forbidden_status:
+      - activated
+    forbidden_action:
+      - activate_now
+    validator: entitlement-card-state-validator
+    risk_level: medium
+
+routing_policy:
+  priority:
+    - explicit_domain
+    - explicit_artifact_type
+    - trusted_identifier
+    - classifier
+  low_confidence_threshold: 0.8
+  low_confidence_fallback: clarify

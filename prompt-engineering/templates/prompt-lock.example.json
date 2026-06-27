@@ -1,0 +1,60 @@
+{
+  "lockVersion": 1,
+  "notice": {
+    "en": "Example only. Generate the real lockfile in CI or with a project CLI.",
+    "zh_tw": "僅供示範。正式 lockfile 請在 CI 或透過專案 CLI 產生。"
+  },
+  "artifact": {
+    "id": "example-prompt-package",
+    "version": "1.0.0",
+    "domain": "example_domain"
+  },
+  "resolvedAt": "2026-06-27T00:00:00Z",
+  "files": {
+    "prompt.yaml": {
+      "sha256": "sha256:<generated>"
+    },
+    "prompt.md": {
+      "sha256": "sha256:<generated>"
+    },
+    "prompt-zh-TW.md": {
+      "sha256": "sha256:<generated>"
+    },
+    "input.schema.json": {
+      "sha256": "sha256:<generated>"
+    },
+    "output.schema.json": {
+      "sha256": "sha256:<generated>"
+    },
+    "examples.yaml": {
+      "sha256": "sha256:<generated>"
+    },
+    "eval-cases.yaml": {
+      "sha256": "sha256:<generated>"
+    }
+  },
+  "dependencies": {
+    "domainRegistry": {
+      "id": "example-domain-registry",
+      "version": "1.0.0",
+      "sha256": "sha256:<generated>"
+    },
+    "workflow": {
+      "id": "example-workflow",
+      "version": "1.0.0",
+      "sha256": "sha256:<generated>"
+    }
+  },
+  "resolvedValidators": [
+    {
+      "id": "schema-validator",
+      "version": "1.0.0",
+      "sha256": "sha256:<registry-or-package-hash>"
+    },
+    {
+      "id": "domain-state-validator",
+      "version": "1.0.0",
+      "sha256": "sha256:<registry-or-package-hash>"
+    }
+  ]
+}
