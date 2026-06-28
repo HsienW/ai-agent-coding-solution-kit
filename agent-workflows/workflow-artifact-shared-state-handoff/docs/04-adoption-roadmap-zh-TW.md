@@ -1,5 +1,7 @@
 # 04｜分階段導入路線：從人工交接到 Node Orchestrator
 
+[English](./04-adoption-roadmap.md) | [繁體中文](./04-adoption-roadmap-zh-TW.md)
+
 ## 1. 導入原則
 
 最穩定的導入順序是：

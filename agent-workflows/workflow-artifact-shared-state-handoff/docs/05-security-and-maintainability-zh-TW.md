@@ -1,5 +1,7 @@
 # 05｜安全、治理與長期維護性
 
+[English](./05-security-and-maintainability.md) | [繁體中文](./05-security-and-maintainability-zh-TW.md)
+
 ## 1. 為什麼 Shared State 也是安全邊界？
 
 當 Agent 開始透過檔案或資料庫交換狀態，Shared State 也會成為新的信任邊界。

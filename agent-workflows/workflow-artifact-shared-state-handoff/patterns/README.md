@@ -1,5 +1,7 @@
 # Pattern mapping: multi-agent shared state and handoff
 
+[English](./README.md) | [繁體中文](./README-zh-TW.md)
+
 Artifact-based Shared State and Structured Handoff are not a new category of architecture problem. They combine several established patterns to handle shared working state, ownership transfer, long-running routing, failure loops, persistence, artifact references, history, snapshots, query efficiency, human approval, and irreversible operations.
 
 The practical question is not "which single GoF pattern is this?" A better question is what each pattern is responsible for inside the workflow.
