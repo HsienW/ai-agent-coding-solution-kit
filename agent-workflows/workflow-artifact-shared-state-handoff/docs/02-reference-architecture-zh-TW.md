@@ -1,5 +1,7 @@
 # 02｜Artifact-based Shared State + Structured Handoff 參考架構
 
+[English](./02-reference-architecture.md) | [繁體中文](./02-reference-architecture-zh-TW.md)
+
 ## 1. 先釐清兩者的分工
 
 Artifact-based Shared State 與 Structured Handoff 解決不同問題：

@@ -1,5 +1,7 @@
 # Artifact-based shared state and structured handoff
 
+[English](./README.md) | [繁體中文](./README-zh-TW.md)
+
 > Moving from manual context transfer to verifiable, persistent, and orchestrated multi-agent coding workflows.
 
 ## Workflow scope
@@ -113,17 +115,15 @@ Public frameworks and protocols share similar ideas around shared state, artifac
 
 ## Recommended reading order
 
-The detailed chapters are currently written in Traditional Chinese:
-
-1. [`docs/01-problem-and-maturity-model-zh-TW.md`](docs/01-problem-and-maturity-model-zh-TW.md)  
+1. [`docs/01-problem-and-maturity-model.md`](docs/01-problem-and-maturity-model.md)  
    Start from human-orchestrated workflows and identify the real bottleneck.
-2. [`docs/02-reference-architecture-zh-TW.md`](docs/02-reference-architecture-zh-TW.md)  
+2. [`docs/02-reference-architecture.md`](docs/02-reference-architecture.md)  
    Define Shared State, Artifact, Handoff, State Machine, and role boundaries.
-3. [`docs/03-runtime-storage-and-retention-zh-TW.md`](docs/03-runtime-storage-and-retention-zh-TW.md)  
+3. [`docs/03-runtime-storage-and-retention.md`](docs/03-runtime-storage-and-retention.md)  
    Separate repo documents, runtime state, evidence, and trace data.
-4. [`docs/04-adoption-roadmap-zh-TW.md`](docs/04-adoption-roadmap-zh-TW.md)  
+4. [`docs/04-adoption-roadmap.md`](docs/04-adoption-roadmap.md)  
    Move from manual handoff to a Node Orchestrator in phases.
-5. [`docs/05-security-and-maintainability-zh-TW.md`](docs/05-security-and-maintainability-zh-TW.md)  
+5. [`docs/05-security-and-maintainability.md`](docs/05-security-and-maintainability.md)  
    Handle path safety, permissions, schema governance, versioning, concurrency, and long-term maintenance.
 6. [`patterns/README.md`](patterns/README.md)  
    Map the design to established patterns such as Blackboard, Repository, State Machine, and Process Manager.

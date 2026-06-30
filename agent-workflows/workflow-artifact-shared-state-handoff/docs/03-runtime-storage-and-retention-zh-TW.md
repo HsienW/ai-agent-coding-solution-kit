@@ -1,5 +1,7 @@
 # 03｜Repo、Runtime State、Evidence 與 Trace 的分離
 
+[English](./03-runtime-storage-and-retention.md) | [繁體中文](./03-runtime-storage-and-retention-zh-TW.md)
+
 ## 1. 最大疑慮：Shared State 會不會讓文件比程式碼還多？
 
 會，前提是把每一輪 Agent 輸出都當成永久 Markdown 提交進 Git。

@@ -1,5 +1,7 @@
 # 設計模式映射：多 Agent Shared State 與 Handoff 並不是全新問題
 
+[English](./README.md) | [繁體中文](./README-zh-TW.md)
+
 ## 1. 不是單一 GoF Pattern
 
 Artifact-based Shared State + Structured Handoff 並沒有一個完全一對一的 GoF 設計模式。
