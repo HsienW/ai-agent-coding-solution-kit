@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "artifact:coordinator-result-001",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "producer": "coordinator",
+  "stage": "plan-change",
+  "kind": "coordinator_result",
+  "status": "approved",
+  "summary": "The change scope is approved for implementation with reviewer read-only and human approval gates preserved.",
+  "inputRefs": [
+    {
+      "refId": "spec-design",
+      "type": "openspec",
+      "uri": "repo://specs/generic-feature/design.md",
+      "description": "Approved design for the generic feature change"
+    }
+  ],
+  "outputRefs": [],
+  "verification": [
+    {
+      "name": "plan requirements reviewed",
+      "status": "passed",
+      "notes": "Scope, non-goals, and acceptance criteria are explicit."
+    }
+  ],
+  "risks": [
+    {
+      "level": "low",
+      "description": "The example uses local runtime paths only.",
+      "mitigation": "Adapt URI roots and permission policy before use."
+    }
+  ],
+  "nextHandoff": {
+    "handoffId": "handoff:coordinator-to-implementer-001",
+    "to": "implementer",
+    "stage": "apply-change",
+    "expectedOutputKind": "implementation_result",
+    "requiresHumanApproval": false
+  },
+  "payload": {
+    "decision": "approved",
+    "approvedScope": [
+      "Create schema assets",
+      "Create prompt assets",
+      "Create example runtime artifacts"
+    ],
+    "constraints": [
+      "Reviewer remains read-only",
+      "Git commit and push remain human-controlled",
+      "No vendor-specific CLI dependency"
+    ],
+    "openQuestions": []
+  },
+  "createdAt": "2026-07-09T09:13:42Z"
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "artifact:review-result-001",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "producer": "reviewer",
+  "stage": "review-result",
+  "kind": "review_result",
+  "status": "approved",
+  "summary": "The implementation matches the approved scope. No blocker or major finding remains.",
+  "inputRefs": [
+    {
+      "refId": "implementation-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/implementation-result.json",
+      "description": "Latest implementation result"
+    },
+    {
+      "refId": "validation-summary",
+      "type": "evidence",
+      "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+      "description": "Validation command summary"
+    }
+  ],
+  "outputRefs": [],
+  "verification": [
+    {
+      "name": "review evidence checked",
+      "status": "passed",
+      "evidenceRef": {
+        "refId": "validation-summary",
+        "type": "evidence",
+        "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+        "description": "Validation command summary"
+      }
+    }
+  ],
+  "risks": [
+    {
+      "level": "low",
+      "description": "The reviewer did not execute commands directly.",
+      "mitigation": "Only trust evidence produced by the implementer or automation host."
+    }
+  ],
+  "nextHandoff": {
+    "handoffId": "handoff:reviewer-to-readiness-001",
+    "to": "readiness",
+    "stage": "readiness-check",
+    "expectedOutputKind": "readiness_result",
+    "requiresHumanApproval": false
+  },
+  "payload": {
+    "verdict": "approve",
+    "findings": [
+      {
+        "severity": "info",
+        "title": "Evidence is summarized",
+        "status": "accepted_risk",
+        "file": "examples/generic-feature-change/evidence/validation-summary.json",
+        "evidence": "The example keeps validation output concise by design.",
+        "impact": "A real project may need richer logs.",
+        "recommendation": "Attach detailed evidence refs when adopting the template.",
+        "confidence": "high"
+      }
+    ],
+    "reviewedArtifacts": [
+      {
+        "refId": "implementation-result",
+        "type": "agent-result",
+        "uri": "artifact://generic-feature-change/run-20260709-001/implementation-result.json",
+        "description": "Latest implementation result"
+      },
+      {
+        "refId": "validation-summary",
+        "type": "evidence",
+        "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+        "description": "Validation command summary"
+      }
+    ],
+    "residualRisks": [
+      "Adopt real validation commands in each project."
+    ]
+  },
+  "createdAt": "2026-07-09T09:13:42Z"
+}

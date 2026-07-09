@@ -1,0 +1,39 @@
+schemaVersion: 1.0.0
+workflowName: artifact-shared-state-handoff
+roles:
+  coordinator:
+    canModifySpecs: true
+    canModifyCode: false
+    canApproveScope: true
+  implementer:
+    canModifySpecs: false
+    canModifyCode: true
+    canProduceEvidence: true
+  reviewer:
+    canModifySpecs: false
+    canModifyCode: false
+    canRunDestructiveCommands: false
+    outputKind: review_result
+  human:
+    canCommit: true
+    canPush: true
+    canDeploy: true
+runtime:
+  localProjectionDir: .agent-runtime
+  gitIgnored: true
+  artifactReferencesOnly: true
+  allowPathTraversal: false
+gates:
+  commitRequiresHumanApproval: true
+  pushRequiresHumanApproval: true
+  deployRequiresHumanApproval: true
+invalidTransitions:
+  - from: REVIEWING
+    to: READY_FOR_ARCHIVE
+    when: reviewerHasBlockerOrMajor
+  - from: IMPLEMENTING
+    to: ARCHIVED_AWAITING_HUMAN_COMMIT
+    when: readinessCheckMissing
+  - from: REVIEWING
+    to: COMPLETED
+    when: humanApprovalMissing

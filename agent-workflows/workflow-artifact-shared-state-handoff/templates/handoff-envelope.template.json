@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "handoffId": "handoff:replace-me-001",
+  "changeId": "replace-me-change",
+  "runId": "run-replace-me-001",
+  "from": "coordinator",
+  "to": "implementer",
+  "stage": "apply-change",
+  "reason": "Replace with the concrete handoff reason.",
+  "requiredInputRefs": [
+    {
+      "refId": "replace-me-input",
+      "type": "openspec",
+      "uri": "repo://replace-me/spec.md",
+      "description": "Replace with a real required input."
+    }
+  ],
+  "expectedOutputKind": "review_result",
+  "acceptanceCriteriaRefs": [
+    {
+      "refId": "replace-me-criteria",
+      "type": "openspec",
+      "uri": "repo://replace-me/acceptance-criteria.md",
+      "description": "Replace with real acceptance criteria."
+    }
+  ],
+  "onSuccess": {
+    "phase": "READY_FOR_READINESS_CHECK",
+    "owner": "readiness",
+    "notes": "No blocker or major findings remain."
+  },
+  "onFailure": {
+    "phase": "CHANGES_REQUESTED",
+    "owner": "implementer",
+    "notes": "Reviewer found issues requiring implementation fixes."
+  },
+  "onConflict": {
+    "phase": "NEEDS_COORDINATOR_ARBITRATION",
+    "owner": "coordinator",
+    "notes": "Reviewer found a design or scope conflict."
+  },
+  "requiresHumanApproval": false,
+  "notes": [
+    "Template: use artifact references, not copied full content."
+  ]
+}

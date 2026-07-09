@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "artifact:readiness-result-001",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "producer": "readiness",
+  "stage": "readiness-check",
+  "kind": "readiness_result",
+  "status": "completed",
+  "summary": "All required gates pass. The change is ready for archive and human-controlled Git operations.",
+  "inputRefs": [
+    {
+      "refId": "implementation-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/implementation-result.json",
+      "description": "Latest implementation result"
+    },
+    {
+      "refId": "review-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/review-result.json",
+      "description": "Latest review result"
+    }
+  ],
+  "outputRefs": [],
+  "verification": [
+    {
+      "name": "gate check",
+      "status": "passed"
+    }
+  ],
+  "risks": [],
+  "nextHandoff": {
+    "handoffId": "handoff:readiness-to-archive-001",
+    "to": "archive",
+    "stage": "archive-change",
+    "expectedOutputKind": "archive_result",
+    "requiresHumanApproval": false
+  },
+  "payload": {
+    "verdict": "ready_to_archive",
+    "gates": [
+      {
+        "name": "plan approved",
+        "passed": true
+      },
+      {
+        "name": "implementation completed",
+        "passed": true
+      },
+      {
+        "name": "review passed",
+        "passed": true
+      },
+      {
+        "name": "human git gate preserved",
+        "passed": true
+      }
+    ],
+    "unresolvedItems": []
+  },
+  "createdAt": "2026-07-09T09:13:42Z"
+}

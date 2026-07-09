@@ -1,0 +1,3 @@
+ src/generic-feature.ts       | 42 +++++++++++++++++++++
+ tests/generic-feature.test.ts | 35 +++++++++++++++++
+ 2 files changed, 77 insertions(+), 0 deletions(-)
