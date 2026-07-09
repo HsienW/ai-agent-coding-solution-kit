@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "artifact:implementation-result-001",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "producer": "implementer",
+  "stage": "apply-change",
+  "kind": "implementation_result",
+  "status": "completed",
+  "summary": "Implemented the generic feature using the approved task list and produced validation evidence for review.",
+  "inputRefs": [
+    {
+      "refId": "spec-design",
+      "type": "openspec",
+      "uri": "repo://specs/generic-feature/design.md",
+      "description": "Approved design for the generic feature change"
+    }
+  ],
+  "outputRefs": [
+    {
+      "refId": "validation-summary",
+      "type": "evidence",
+      "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+      "description": "Validation command summary"
+    }
+  ],
+  "verification": [
+    {
+      "name": "unit tests",
+      "status": "passed",
+      "command": "npm test",
+      "evidenceRef": {
+        "refId": "validation-summary",
+        "type": "evidence",
+        "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+        "description": "Validation command summary"
+      }
+    },
+    {
+      "name": "static checks",
+      "status": "passed",
+      "command": "npm run lint",
+      "evidenceRef": {
+        "refId": "validation-summary",
+        "type": "evidence",
+        "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+        "description": "Validation command summary"
+      }
+    }
+  ],
+  "risks": [
+    {
+      "level": "medium",
+      "description": "Manual evidence capture may be incomplete.",
+      "mitigation": "Reviewer must verify the evidence refs before approval."
+    }
+  ],
+  "nextHandoff": {
+    "handoffId": "handoff:implementer-to-reviewer-001",
+    "to": "reviewer",
+    "stage": "review-result",
+    "expectedOutputKind": "review_result",
+    "requiresHumanApproval": false
+  },
+  "payload": {
+    "completedTasks": [
+      "Added a typed result envelope",
+      "Added example handoff and current state artifacts",
+      "Added validation evidence summary"
+    ],
+    "changedFiles": [
+      "src/generic-feature.ts",
+      "tests/generic-feature.test.ts"
+    ],
+    "diffSummary": "Small scoped implementation with tests and no unrelated refactor.",
+    "scopeDeviations": [],
+    "knownRisks": [
+      "Evidence is represented as a summary in this example."
+    ]
+  },
+  "createdAt": "2026-07-09T09:13:42Z"
+}

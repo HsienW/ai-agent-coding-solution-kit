@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "changeId": "replace-me-change",
+  "runId": "run-replace-me-001",
+  "phase": "PLAN_DRAFT",
+  "currentOwner": "coordinator",
+  "revision": 1,
+  "attempt": 0,
+  "latestArtifacts": {},
+  "latestHandoff": null,
+  "gates": {
+    "planApproved": false,
+    "implementationComplete": false,
+    "reviewPassed": false,
+    "readinessPassed": false,
+    "humanApproved": false
+  },
+  "blockers": [],
+  "nextAction": "Create or approve the plan before implementation.",
+  "updatedAt": "2026-07-09T09:13:42Z",
+  "updatedBy": "replace-me-actor",
+  "terminal": false,
+  "notes": [
+    "Template: replace placeholders before use."
+  ]
+}

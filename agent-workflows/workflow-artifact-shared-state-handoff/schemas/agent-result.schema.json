@@ -1,0 +1,643 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/agent-result.schema.json",
+  "title": "Agent Result Envelope",
+  "description": "Framework-neutral result envelope for multi-agent coding workflows.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "artifactId",
+    "changeId",
+    "runId",
+    "producer",
+    "stage",
+    "kind",
+    "status",
+    "summary",
+    "inputRefs",
+    "outputRefs",
+    "verification",
+    "risks",
+    "payload"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^1\\.0\\.[0-9]+$"
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^artifact:[a-z0-9][a-z0-9._:-]*$"
+    },
+    "changeId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,120}$"
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^run-[a-z0-9][a-z0-9._-]{2,120}$"
+    },
+    "producer": {
+      "enum": [
+        "coordinator",
+        "implementer",
+        "reviewer",
+        "readiness",
+        "archive",
+        "human",
+        "automation"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "plan-change",
+        "review-plan",
+        "apply-change",
+        "review-result",
+        "fix-from-review",
+        "readiness-check",
+        "archive-change",
+        "manual-gate"
+      ]
+    },
+    "kind": {
+      "enum": [
+        "coordinator_result",
+        "implementation_result",
+        "review_result",
+        "readiness_result",
+        "archive_result"
+      ]
+    },
+    "status": {
+      "enum": [
+        "completed",
+        "approved",
+        "request_changes",
+        "comment_only",
+        "blocked",
+        "failed",
+        "incomplete"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "inputRefs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifactRef"
+      }
+    },
+    "outputRefs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifactRef"
+      }
+    },
+    "verification": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/verification"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/risk"
+      }
+    },
+    "nextHandoff": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/handoffSummary"
+        }
+      ]
+    },
+    "payload": {
+      "type": "object"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "coordinator_result"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/coordinatorPayload"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "implementation_result"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/implementationPayload"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "review_result"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/reviewPayload"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "readiness_result"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/readinessPayload"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "archive_result"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "payload": {
+            "$ref": "#/$defs/archivePayload"
+          }
+        },
+        "required": [
+          "payload"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "artifactRef": {
+      "type": "object",
+      "required": [
+        "refId",
+        "type",
+        "uri"
+      ],
+      "properties": {
+        "refId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "openspec",
+            "schema",
+            "runtime-state",
+            "handoff",
+            "agent-result",
+            "evidence",
+            "diff",
+            "summary",
+            "source",
+            "other"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "pattern": "^(repo://|runtime://|artifact://|evidence://|summary://|schema://)[A-Za-z0-9._~:/?#@!$&'()*+,;=%-]+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "name",
+        "status"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "skipped",
+            "not_run",
+            "partial"
+          ]
+        },
+        "command": {
+          "type": "string"
+        },
+        "evidenceRef": {
+          "$ref": "#/$defs/artifactRef"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "risk": {
+      "type": "object",
+      "required": [
+        "level",
+        "description"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "mitigation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "handoffSummary": {
+      "type": "object",
+      "required": [
+        "handoffId",
+        "to",
+        "stage",
+        "expectedOutputKind",
+        "requiresHumanApproval"
+      ],
+      "properties": {
+        "handoffId": {
+          "type": "string",
+          "pattern": "^handoff:[a-z0-9][a-z0-9._:-]*$"
+        },
+        "to": {
+          "enum": [
+            "coordinator",
+            "implementer",
+            "reviewer",
+            "readiness",
+            "archive",
+            "human"
+          ]
+        },
+        "stage": {
+          "enum": [
+            "plan-change",
+            "review-plan",
+            "apply-change",
+            "review-result",
+            "fix-from-review",
+            "readiness-check",
+            "archive-change",
+            "manual-gate"
+          ]
+        },
+        "expectedOutputKind": {
+          "enum": [
+            "coordinator_result",
+            "implementation_result",
+            "review_result",
+            "readiness_result",
+            "archive_result"
+          ]
+        },
+        "requiresHumanApproval": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "coordinatorPayload": {
+      "type": "object",
+      "required": [
+        "decision",
+        "approvedScope",
+        "constraints",
+        "openQuestions"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "approved",
+            "request_changes",
+            "blocked",
+            "incomplete"
+          ]
+        },
+        "approvedScope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "openQuestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "implementationPayload": {
+      "type": "object",
+      "required": [
+        "completedTasks",
+        "changedFiles",
+        "diffSummary",
+        "scopeDeviations",
+        "knownRisks"
+      ],
+      "properties": {
+        "completedTasks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "changedFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "diffSummary": {
+          "type": "string"
+        },
+        "scopeDeviations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "knownRisks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "finding": {
+      "type": "object",
+      "required": [
+        "severity",
+        "title",
+        "status",
+        "evidence",
+        "impact",
+        "recommendation"
+      ],
+      "properties": {
+        "severity": {
+          "enum": [
+            "blocker",
+            "major",
+            "minor",
+            "info"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "resolved",
+            "accepted_risk",
+            "not_applicable"
+          ]
+        },
+        "file": {
+          "type": "string"
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "evidence": {
+          "type": "string"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewPayload": {
+      "type": "object",
+      "required": [
+        "verdict",
+        "findings",
+        "reviewedArtifacts",
+        "residualRisks"
+      ],
+      "properties": {
+        "verdict": {
+          "enum": [
+            "approve",
+            "request_changes",
+            "comment_only",
+            "incomplete"
+          ]
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/finding"
+          }
+        },
+        "reviewedArtifacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/artifactRef"
+          }
+        },
+        "residualRisks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "readinessPayload": {
+      "type": "object",
+      "required": [
+        "verdict",
+        "gates",
+        "unresolvedItems"
+      ],
+      "properties": {
+        "verdict": {
+          "enum": [
+            "ready_to_archive",
+            "not_ready",
+            "incomplete"
+          ]
+        },
+        "gates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "passed"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "passed": {
+                "type": "boolean"
+              },
+              "notes": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "unresolvedItems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "archivePayload": {
+      "type": "object",
+      "required": [
+        "archived",
+        "executionSummaryRef",
+        "commitRecommendation",
+        "remainingWork"
+      ],
+      "properties": {
+        "archived": {
+          "type": "boolean"
+        },
+        "executionSummaryRef": {
+          "$ref": "#/$defs/artifactRef"
+        },
+        "commitRecommendation": {
+          "type": "string"
+        },
+        "remainingWork": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "commands": [
+    {
+      "name": "unit tests",
+      "command": "npm test",
+      "exitCode": 0,
+      "status": "passed"
+    },
+    {
+      "name": "static checks",
+      "command": "npm run lint",
+      "exitCode": 0,
+      "status": "passed"
+    }
+  ],
+  "notes": [
+    "This is an example summary. Real projects should keep raw logs in evidence storage when needed."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "handoffId": "handoff:implementer-to-reviewer-001",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "from": "implementer",
+  "to": "reviewer",
+  "stage": "review-result",
+  "reason": "Implementation completed and validation evidence is available for read-only review.",
+  "requiredInputRefs": [
+    {
+      "refId": "implementation-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/implementation-result.json",
+      "description": "Latest implementation result"
+    },
+    {
+      "refId": "validation-summary",
+      "type": "evidence",
+      "uri": "evidence://generic-feature-change/run-20260709-001/validation-summary.json",
+      "description": "Validation command summary"
+    },
+    {
+      "refId": "spec-design",
+      "type": "openspec",
+      "uri": "repo://specs/generic-feature/design.md",
+      "description": "Approved design for the generic feature change"
+    }
+  ],
+  "expectedOutputKind": "review_result",
+  "acceptanceCriteriaRefs": [
+    {
+      "refId": "spec-design",
+      "type": "openspec",
+      "uri": "repo://specs/generic-feature/design.md",
+      "description": "Approved design for the generic feature change"
+    }
+  ],
+  "onSuccess": {
+    "phase": "READY_FOR_READINESS_CHECK",
+    "owner": "readiness",
+    "notes": "No blocker or major findings remain."
+  },
+  "onFailure": {
+    "phase": "CHANGES_REQUESTED",
+    "owner": "implementer",
+    "notes": "Reviewer found issues requiring implementation fixes."
+  },
+  "onConflict": {
+    "phase": "NEEDS_COORDINATOR_ARBITRATION",
+    "owner": "coordinator",
+    "notes": "Reviewer found a design or scope conflict."
+  },
+  "requiresHumanApproval": false,
+  "notes": [
+    "Reviewer must not modify code or run destructive commands."
+  ]
+}

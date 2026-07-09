@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "artifactId": "artifact:archive-result-001",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "producer": "archive",
+  "stage": "archive-change",
+  "kind": "archive_result",
+  "status": "completed",
+  "summary": "Archived the workflow result and produced a human-readable execution summary. Commit remains human-controlled.",
+  "inputRefs": [
+    {
+      "refId": "implementation-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/implementation-result.json",
+      "description": "Latest implementation result"
+    },
+    {
+      "refId": "review-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/review-result.json",
+      "description": "Latest review result"
+    }
+  ],
+  "outputRefs": [
+    {
+      "refId": "execution-summary",
+      "type": "summary",
+      "uri": "summary://generic-feature-change/execution-summary.md",
+      "description": "Final human-readable summary"
+    }
+  ],
+  "verification": [
+    {
+      "name": "summary generated",
+      "status": "passed"
+    }
+  ],
+  "risks": [],
+  "nextHandoff": null,
+  "payload": {
+    "archived": true,
+    "executionSummaryRef": {
+      "refId": "execution-summary",
+      "type": "summary",
+      "uri": "summary://generic-feature-change/execution-summary.md",
+      "description": "Final human-readable summary"
+    },
+    "commitRecommendation": "docs(agent-workflow): add generic feature workflow assets",
+    "remainingWork": []
+  },
+  "createdAt": "2026-07-09T09:13:42Z"
+}

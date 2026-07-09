@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/current-state.schema.json",
+  "title": "Current Workflow State",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "changeId",
+    "runId",
+    "phase",
+    "currentOwner",
+    "revision",
+    "latestArtifacts",
+    "latestHandoff",
+    "gates",
+    "blockers",
+    "nextAction",
+    "updatedAt",
+    "terminal"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^1\\.0\\.[0-9]+$"
+    },
+    "changeId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,120}$"
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^run-[a-z0-9][a-z0-9._-]{2,120}$"
+    },
+    "phase": {
+      "enum": [
+        "PLAN_DRAFT",
+        "PLAN_REVIEW",
+        "PLAN_APPROVED",
+        "READY_FOR_IMPLEMENTATION",
+        "IMPLEMENTING",
+        "READY_FOR_REVIEW",
+        "REVIEWING",
+        "CHANGES_REQUESTED",
+        "NEEDS_COORDINATOR_ARBITRATION",
+        "READY_FOR_READINESS_CHECK",
+        "READY_FOR_ARCHIVE",
+        "ARCHIVED_AWAITING_HUMAN_COMMIT",
+        "COMPLETED",
+        "FAILED",
+        "INCOMPLETE"
+      ]
+    },
+    "currentOwner": {
+      "enum": [
+        "coordinator",
+        "implementer",
+        "reviewer",
+        "readiness",
+        "archive",
+        "human",
+        "automation"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "latestArtifacts": {
+      "type": "object",
+      "properties": {
+        "coordinatorResult": {
+          "$ref": "#/$defs/artifactRef"
+        },
+        "implementationResult": {
+          "$ref": "#/$defs/artifactRef"
+        },
+        "reviewResult": {
+          "$ref": "#/$defs/artifactRef"
+        },
+        "readinessResult": {
+          "$ref": "#/$defs/artifactRef"
+        },
+        "archiveResult": {
+          "$ref": "#/$defs/artifactRef"
+        }
+      },
+      "additionalProperties": false
+    },
+    "latestHandoff": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/handoffRef"
+        }
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "required": [
+        "planApproved",
+        "implementationComplete",
+        "reviewPassed",
+        "readinessPassed",
+        "humanApproved"
+      ],
+      "properties": {
+        "planApproved": {
+          "type": "boolean"
+        },
+        "implementationComplete": {
+          "type": "boolean"
+        },
+        "reviewPassed": {
+          "type": "boolean"
+        },
+        "readinessPassed": {
+          "type": "boolean"
+        },
+        "humanApproved": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "description"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nextAction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedBy": {
+      "type": "string"
+    },
+    "terminal": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "artifactRef": {
+      "type": "object",
+      "required": [
+        "refId",
+        "type",
+        "uri"
+      ],
+      "properties": {
+        "refId": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "openspec",
+            "schema",
+            "runtime-state",
+            "handoff",
+            "agent-result",
+            "evidence",
+            "diff",
+            "summary",
+            "source",
+            "other"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "pattern": "^(repo://|runtime://|artifact://|evidence://|summary://|schema://)[A-Za-z0-9._~:/?#@!$&'()*+,;=%-]+$"
+        },
+        "description": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "handoffRef": {
+      "type": "object",
+      "required": [
+        "handoffId",
+        "uri",
+        "to",
+        "stage"
+      ],
+      "properties": {
+        "handoffId": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "pattern": "^(runtime://|artifact://)[A-Za-z0-9._~:/?#@!$&'()*+,;=%-]+$"
+        },
+        "to": {
+          "enum": [
+            "coordinator",
+            "implementer",
+            "reviewer",
+            "readiness",
+            "archive",
+            "human"
+          ]
+        },
+        "stage": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

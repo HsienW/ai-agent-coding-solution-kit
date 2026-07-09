@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "changeId": "generic-feature-change",
+  "runId": "run-20260709-001",
+  "phase": "READY_FOR_READINESS_CHECK",
+  "currentOwner": "readiness",
+  "revision": 5,
+  "attempt": 1,
+  "latestArtifacts": {
+    "coordinatorResult": {
+      "refId": "coordinator-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/coordinator-result.json"
+    },
+    "implementationResult": {
+      "refId": "implementation-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/implementation-result.json",
+      "description": "Latest implementation result"
+    },
+    "reviewResult": {
+      "refId": "review-result",
+      "type": "agent-result",
+      "uri": "artifact://generic-feature-change/run-20260709-001/review-result.json",
+      "description": "Latest review result"
+    }
+  },
+  "latestHandoff": {
+    "handoffId": "handoff:reviewer-to-readiness-001",
+    "uri": "runtime://generic-feature-change/run-20260709-001/handoff-envelope.json",
+    "to": "readiness",
+    "stage": "readiness-check"
+  },
+  "gates": {
+    "planApproved": true,
+    "implementationComplete": true,
+    "reviewPassed": true,
+    "readinessPassed": false,
+    "humanApproved": false
+  },
+  "blockers": [],
+  "nextAction": "Run readiness check using the latest implementation and review artifacts.",
+  "updatedAt": "2026-07-09T09:13:42Z",
+  "updatedBy": "reviewer-capture-host",
+  "terminal": false,
+  "notes": [
+    "This file is a runtime projection example, not a Git-tracked source of truth for every project."
+  ]
+}

@@ -1,0 +1,3 @@
+Generated: 2026-07-09T09:13:42Z
+Validation: jsonschema Draft202012 validation passed
+Checked: agent-result, handoff-envelope, current-state schemas and examples.
