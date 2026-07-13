@@ -25,27 +25,38 @@ The repository focuses on OpenSpec / SDD, Context Engineering, Prompt Engineerin
 ## 📂 Repository Structure
 
 ```text
-ai-agent-code-solution-kit/
+ai-agent-coding-solution-kit/
 ├─ openspec/
-│  ├─ docs/
-│  ├─ templates/
-│  └─ prompts/
+│  └─ openspec-agent-workflow-router/
+│     ├─ docs/
+│     ├─ prompts/
+│     └─ templates/
+│        └─ codex-skill/
 ├─ context-engineering/
 │  ├─ docs/
-│  ├─ templates/
-│  └─ patterns/
+│  ├─ patterns/
+│  └─ templates/
 ├─ prompt-engineering/
 │  ├─ docs/
-│  ├─ templates/
-│  └─ prompts/
+│  ├─ prompts/
+│  │  └─ structured-artifact-generation/
+│  └─ templates/
 ├─ agent-design/
 │  └─ tool-schema-routing/
 │     ├─ docs/
 │     ├─ patterns/
 │     └─ templates/
 ├─ agent-workflows/
-├─ shared/
-└─ archive/
+│  ├─ openspec-multi-agent-lifecycle/
+│  └─ workflow-artifact-shared-state-handoff/
+│     ├─ docs/
+│     ├─ examples/
+│     │  └─ generic-feature-change/
+│     ├─ patterns/
+│     ├─ prompts/
+│     ├─ schemas/
+│     └─ templates/
+└─ shared/
 ```
 
 不同類型內容會盡量保持清楚分工：
@@ -54,9 +65,10 @@ ai-agent-code-solution-kit/
 * `templates`：可直接複製修改的文件骨架
 * `prompts`：可交給 AI Agent 使用的指令
 * `patterns`：可跨專案複用的設計模式
-* `archive`：已過時但仍具有參考價值的內容
+* `examples`：可參考的實作或工作流程樣本
+* `schemas`：用來描述資料結構或交付物格式的規格
 
-Content is organized by purpose, including documentation, reusable templates, prompts, patterns, and archived references.
+Content is organized by purpose, including documentation, reusable templates, prompts, patterns, examples, schemas, and shared rules.
 
 ## 🌱 持續改進
 
