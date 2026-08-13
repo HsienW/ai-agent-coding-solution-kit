@@ -1,28 +1,25 @@
 # 🎓 AI Agent Code Solution Kit
 
-> 一個持續更新的 AI Agent Coding 文件、模板與工程實踐知識庫。  
-> A continuously updated knowledge base for AI Agent Coding documents, templates, and engineering practices.
+[English](./README.md) | [繁體中文](./README-zh-TW.md)
 
-本倉庫用於整理我在 AI Agent 開發與 AI 輔助編程過程中，實際研究、使用與驗證過的文件、Prompt、模板、規範與工作流程。
-目標是將零散經驗逐步沉澱成可閱讀、可複用、可持續維護的工程資產，方便應用在個人專案或團隊開發流程中。
+> A continuously updated knowledge base of AI Agent Coding documentation, templates, and engineering practices.
 
-This repository collects practical AI Agent Coding knowledge and turns it into reusable engineering assets for personal and team workflows.
+This repository collects the documents, Prompts, templates, specifications, and workflows that I have researched, used, and verified while developing AI Agents and working with AI-assisted programming.
+It turns scattered experience into readable, reusable, and maintainable engineering assets for personal projects and team development workflows.
 
-## 📚 主要內容
+## 📚 Contents
 
-目前預計聚焦以下幾個方向：
+The repository currently focuses on these areas:
 
-* **OpenSpec / SDD**：需求研究、規格設計、任務拆解、Change 管理與驗收流程
-* **Context Engineering**：上下文路由、漸進式披露、記憶設計與長任務管理
-* **Prompt Engineering**：研究、規劃、開發、Review 與除錯 Prompt
-* **Agent Design**：Agent 執行期架構、Tool Contract、Routing、Guardrail、治理與評測
-* **Agent Workflows**：Claude Code、Codex CLI、Gemini CLI 等工具的協作模式
-* **Reusable Assets**：通用 Markdown 文件、模板、Checklist、Agent 規則與 Prompt
-* **Shared**：通用跨角色、跨流程會重複使用的共享規則文件
+* **OpenSpec / SDD**: requirement research, specification design, task breakdown, Change management, and acceptance workflows
+* **Context Engineering**: context routing, progressive disclosure, memory design, and long-running task management
+* **Prompt Engineering**: Prompts for research, planning, development, Review, and debugging
+* **Agent Design**: Agent runtime architecture, Tool Contracts, Routing, Guardrails, governance, and evaluation
+* **Agent Workflows**: collaboration patterns for tools such as Claude Code, Codex CLI, and Gemini CLI
+* **Reusable assets**: general-purpose Markdown documents, templates, Checklists, Agent rules, and Prompts
+* **Shared rules**: rules used across roles and workflows
 
-The repository focuses on OpenSpec / SDD, Context Engineering, Prompt Engineering, Agent Design, AI Agent workflows, reusable assets, and shared rules.
-
-## 📂 Repository Structure
+## 📂 Repository structure
 
 ```text
 ai-agent-coding-solution-kit/
@@ -59,20 +56,16 @@ ai-agent-coding-solution-kit/
 └─ shared/
 ```
 
-不同類型內容會盡量保持清楚分工：
+Each content type has a distinct purpose:
 
-* `docs`：概念、方法與實踐紀錄
-* `templates`：可直接複製修改的文件骨架
-* `prompts`：可交給 AI Agent 使用的指令
-* `patterns`：可跨專案複用的設計模式
-* `examples`：可參考的實作或工作流程樣本
-* `schemas`：用來描述資料結構或交付物格式的規格
+* `docs`: concepts, methods, and engineering notes
+* `templates`: document structures ready to copy and adapt
+* `prompts`: instructions for AI Agents
+* `patterns`: design patterns reusable across projects
+* `examples`: implementation and workflow examples
+* `schemas`: specifications that describe data structures or deliverable formats
 
-Content is organized by purpose, including documentation, reusable templates, prompts, patterns, examples, schemas, and shared rules.
+## 🌱 Ongoing maintenance
 
-## 🌱 持續改進
-
-本倉庫會隨著 AI Coding Agent、OpenSpec、Context Engineering 與 Prompt Engineering 的發展持續更新。
-所有內容主要來自個人研究與工程實踐，使用前仍建議根據實際模型、工具版本與專案環境進行驗證。
-
-This repository will continue to evolve with AI Coding Agent practices, and all content should be validated against the actual model, tool version, and project environment before use.
+This repository evolves with AI Coding Agent, OpenSpec, Context Engineering, and Prompt Engineering practices.
+The material comes from personal research and engineering work. Validate it against the model, tool version, and project environment before adoption.
