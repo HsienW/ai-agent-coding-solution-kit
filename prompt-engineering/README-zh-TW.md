@@ -39,15 +39,15 @@ flowchart LR
 ## 核心原則
 
 ```text
-把 Prompt 當成協議，而不是散文。
-讓 Domain 負責語意邊界。
-讓 Skill 負責工程邊界。
-先 routing，再組裝 context。
-先產生結構化 spec，再產生最終 artifact。
-用 schema 保護結構，用 validator 保護領域語意。
-區分 Prompt 污染與 Prompt Injection。
-讓工程師操作 workflow 與 skill，而不是直接操作未受控的正式 Prompt。
-讓每個 Prompt Package 都可評估、可發布、可觀測、可回復。
+1. 把 Prompt 當成協議，而不是散文。
+2. 讓 Domain 負責語意邊界。
+3. 讓 Skill 負責工程邊界。
+4. 先 routing，再組裝 context。
+5. 先產生結構化 spec，再產生最終 artifact。
+6. 用 schema 保護結構，用 validator 保護領域語意。
+7. 區分 Prompt 污染與 Prompt Injection。
+8. 讓工程師操作 workflow 與 skill，不直接操作未受控的正式 Prompt。
+9. 讓每個 Prompt Package 都可評估、可發布、可觀測、可回復。
 ```
 
 ## 文件地圖

@@ -39,15 +39,15 @@ flowchart LR
 ## Core Principles
 
 ```text
-Treat prompts as protocols, not prose.
-Let domains own semantic boundaries.
-Let skills own engineering boundaries.
-Route before assembling context.
-Generate a structured spec before a final artifact.
-Use schemas for structure and validators for domain semantics.
-Separate prompt contamination from prompt injection.
-Let engineers operate workflows and skills, not unrestricted production prompts.
-Make every prompt package evaluable, releasable, observable, and reversible.
+1. Treat prompts as protocols, not prose.
+2. Let domains own semantic boundaries.
+3. Let skills own engineering boundaries.
+4. Route before assembling context.
+5. Generate a structured spec before a final artifact.
+6. Use schemas for structure and validators for domain semantics.
+7. Separate prompt contamination from prompt injection.
+8. Let engineers operate workflows and skills, not unrestricted production prompts.
+9. Make every prompt package evaluable, releasable, observable, and reversible.
 ```
 
 ## Documentation Map
