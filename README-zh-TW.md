@@ -1,6 +1,6 @@
 # 🎓 AI Agent Code Solution Kit
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[English](./README.md) | [简体中文](./README-zh-CN.md)
 
 > 持續更新的 AI Agent Coding 文件、模板與工程實踐知識庫。
 
