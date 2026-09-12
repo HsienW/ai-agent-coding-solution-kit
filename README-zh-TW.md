@@ -12,7 +12,7 @@
 本倉庫目前聚焦以下方向：
 
 * **OpenSpec / SDD**：需求研究、規格設計、任務拆解、Change 管理與驗收流程
-* **上下文工程（Context Engineering）**：上下文路由、漸進式披露、記憶設計與長任務管理
+* **Context Engineering**：上下文路由、漸進式披露、記憶設計與長任務管理
 * **Prompt Engineering**：研究、規劃、開發、Review 與除錯 Prompt
 * **Agent Design**：Agent 執行期架構、Tool Contract、Routing、Guardrail、治理與評測
 * **Agent Workflows**：Claude Code、Codex CLI、Gemini CLI 等工具的協作模式
