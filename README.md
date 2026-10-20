@@ -16,7 +16,7 @@ The repository currently focuses on these areas:
 * **Prompt Engineering**: Prompts for research, planning, development, Review, and debugging
 * **Agent Design**: Agent runtime architecture, Tool Contracts, Routing, Guardrails, governance, and evaluation
 * **Agent Workflows**: collaboration patterns for tools such as Claude Code, Codex CLI, and Gemini CLI
-* **Agent Blog**: AI Agent fundamentals and usage, plus reflections on AI in software development
+* **Agent Thoughts**: AI Agent fundamentals and usage, plus reflections on AI in software development
 * **Reusable assets**: general-purpose Markdown documents, templates, Checklists, Agent rules, and Prompts
 * **Shared rules**: rules used across roles and workflows
 
@@ -54,7 +54,7 @@ ai-agent-coding-solution-kit/
 │     ├─ prompts/
 │     ├─ schemas/
 │     └─ templates/
-├─ agent-blog/
+├─ agent-thoughts/
 │  ├─ ai-agent-basics/
 │  └─ ai-software-development/
 └─ shared/

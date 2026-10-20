@@ -15,7 +15,7 @@
 
 本篇不會展開名詞學術討論，只會聚焦在真實的「軟體工程進入業務場景的專家直覺」初步說明，先看以下這張圖
 
-![Expert intuition in the AI spotlight](../assets/agent-blog/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
+![Expert intuition in the AI spotlight](../assets/agent-thoughts/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
 
 AI Expert Intuition
 
@@ -27,7 +27,7 @@ AI Expert Intuition
 
 > ***軟體工程的專家直覺 = 架構設計 + 業務經驗***
 
-![Expert intuition connects a full range of capabilities](../assets/agent-blog/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
+![Expert intuition connects a full range of capabilities](../assets/agent-thoughts/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
 
 #### 架構設計
 
@@ -52,7 +52,7 @@ AI 時代真正稀缺的軟實力再往下精進，我拆分為:
 
 > ***把現況拉向期望的能力 = 專家直覺 + 無權領導力***
 
-![Roadmap from expert intuition to business impact](../assets/agent-blog/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
+![Roadmap from expert intuition to business impact](../assets/agent-thoughts/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
 
 #### 無權領導力
 

@@ -16,7 +16,7 @@
 * **Prompt Engineering**：研究、規劃、開發、Review 與除錯 Prompt
 * **Agent Design**：Agent 執行期架構、Tool Contract、Routing、Guardrail、治理與評測
 * **Agent Workflows**：Claude Code、Codex CLI、Gemini CLI 等工具的協作模式
-* **Agent Blog**：AI Agent 的基礎認知與操作使用，以及 AI 在軟體開發中的經驗與心得
+* **Agent Thoughts**：AI Agent 的基礎認知與操作使用，以及 AI 在軟體開發中的經驗與心得
 * **可複用資產**：通用 Markdown 文件、模板、Checklist、Agent 規則與 Prompt
 * **共享規則**：跨角色、跨流程重複使用的規則文件
 
@@ -54,7 +54,7 @@ ai-agent-coding-solution-kit/
 │     ├─ prompts/
 │     ├─ schemas/
 │     └─ templates/
-├─ agent-blog/
+├─ agent-thoughts/
 │  ├─ ai-agent-basics/
 │  └─ ai-software-development/
 └─ shared/

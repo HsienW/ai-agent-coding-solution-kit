@@ -16,7 +16,7 @@ Readers unfamiliar with **Expert Intuition** can consult these academic definiti
 
 This article will not pursue an academic discussion of the term. It will offer an initial account of **“expert intuition when software engineering enters a business setting.”** First, look at this image
 
-![Expert intuition in the AI spotlight](../assets/agent-blog/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
+![Expert intuition in the AI spotlight](../assets/agent-thoughts/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
 
 AI Expert Intuition
 
@@ -28,7 +28,7 @@ In **software engineering**, expert intuition means the ability to achieve “co
 
 > ***Expert Intuition in Software Engineering = Architecture Design + Business Experience***
 
-![Expert intuition connects a full range of capabilities](../assets/agent-blog/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
+![Expert intuition connects a full range of capabilities](../assets/agent-thoughts/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
 
 #### **Architecture Design**
 
@@ -53,7 +53,7 @@ I break down the soft skills that are truly scarce in the AI era one step furthe
 
 > ***The Ability to Move the Current State Toward the Desired Outcome = Expert Intuition + Leadership Without Authority***
 
-![Roadmap from expert intuition to business impact](../assets/agent-blog/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
+![Roadmap from expert intuition to business impact](../assets/agent-thoughts/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
 
 #### **Leadership Without Authority**
 
