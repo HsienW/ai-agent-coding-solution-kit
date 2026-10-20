@@ -1,5 +1,7 @@
 # [Development] Expert Intuition Is the Ability We Need Most in the AI Era
 
+[English](./01-Development-AI-Era-Expert-Intuition.md) | [繁體中文](./01-Development-AI-時代最需要的能力是專家直覺.md)
+
 I think people who use AI will feel this especially keenly. AI can finish a great deal of repetitive work more efficiently. It can even reason and make guesses to some degree, helping people with certain tasks involving “creation and imitation.” This makes “producing results quickly” less important than it used to be, while increasing the importance of the soft skills needed to put work into practice in a business, or to fully “move the current state toward the desired outcome.”
 
 I believe the foundation of those soft skills is “**expert intuition”**. AI’s output ultimately enters the human world: **responsibility for that output**, **willingness to buy**, and **judgments about its use all come from people**. For now, AI is an accelerator for the production process. By speeding that process up, it makes the soft skills needed to carry work through to completion more visible. I will use software engineering as my example below; readers in other industries can draw the corresponding parallels.
