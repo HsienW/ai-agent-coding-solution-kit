@@ -1,6 +1,8 @@
 # 🎓 AI Agent Code Solution Kit
 
-[English](./README.md) | [繁体中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-0969da?style=for-the-badge)](./README-zh-CN.md)
 
 > 持续更新的 AI Agent Coding 文档、模板与工程实践知识库。
 
