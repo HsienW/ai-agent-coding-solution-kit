@@ -1,6 +1,8 @@
 # 🎓 AI Agent Code Solution Kit
 
-[繁體中文](./README-zh-TW.md) | [简体中文](./README-zh-CN.md)
+[![English](https://img.shields.io/badge/English-0969da?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 > A continuously updated knowledge base of AI Agent Coding documentation, templates, and engineering practices.
 
@@ -22,43 +24,15 @@ The repository currently focuses on these areas:
 
 ## 📂 Repository structure
 
-```text
-ai-agent-coding-solution-kit/
-├─ openspec/
-│  └─ openspec-agent-workflow-router/
-│     ├─ docs/
-│     ├─ prompts/
-│     └─ templates/
-│        └─ codex-skill/
-├─ context-engineering/
-│  ├─ docs/
-│  ├─ patterns/
-│  └─ templates/
-├─ prompt-engineering/
-│  ├─ docs/
-│  ├─ prompts/
-│  │  └─ structured-artifact-generation/
-│  └─ templates/
-├─ agent-design/
-│  └─ tool-schema-routing/
-│     ├─ docs/
-│     ├─ patterns/
-│     └─ templates/
-├─ agent-workflows/
-│  ├─ openspec-multi-agent-lifecycle/
-│  └─ workflow-artifact-shared-state-handoff/
-│     ├─ docs/
-│     ├─ examples/
-│     │  └─ generic-feature-change/
-│     ├─ patterns/
-│     ├─ prompts/
-│     ├─ schemas/
-│     └─ templates/
-├─ agent-thoughts/
-│  ├─ ai-agent-basics/
-│  └─ ai-software-development/
-└─ shared/
-```
+| Area | Core topics | Reading entry points |
+| --- | --- | --- |
+| OpenSpec / SDD | Specification-driven development, stage routing, planning and review, implementation acceptance, and archiving | [OpenSpec workflow router](./openspec/openspec-agent-workflow-router/README.md) |
+| Context Engineering | Context routing, progressive disclosure, RAG, memory design, runtime, and governance | [Context engineering](./context-engineering/README.md) |
+| Prompt Engineering | Prompt contracts, structured artifact generation, injection prevention, evaluation, and version management | [Prompt engineering](./prompt-engineering/README.md), [Structured artifact generation](./prompt-engineering/prompts/structured-artifact-generation/) |
+| Agent Design | Tool Schema, Tool Contract, capability routing, permission boundaries, and evaluation | [Agent design](./agent-design/README.md), [Tool Schema and Routing](./agent-design/tool-schema-routing/README.md) |
+| Agent Workflows | Multi-agent lifecycles, shared work state, structured handoffs, and collaboration workflows | [OpenSpec multi-agent lifecycle](./agent-workflows/openspec-multi-agent-lifecycle/), [Shared state and structured handoff](./agent-workflows/workflow-artifact-shared-state-handoff/README.md) |
+| Agent Thoughts | AI Agent fundamentals, usage, and reflections on AI in software development | [AI Agent fundamentals and usage](./agent-thoughts/ai-agent-basics/), [Reflections on AI in software development](./agent-thoughts/ai-software-development/) |
+| Shared rules | Rules reused across roles and workflows | [Shared rules directory](./shared/) |
 
 Each content type has a distinct purpose:
 

@@ -1,6 +1,8 @@
 # 🎓 AI Agent Code Solution Kit
 
-[English](./README.md) | [繁体中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-0969da?style=for-the-badge)](./README-zh-CN.md)
 
 > 持续更新的 AI Agent Coding 文档、模板与工程实践知识库。
 
@@ -22,43 +24,15 @@
 
 ## 📂 目录结构
 
-```text
-ai-agent-coding-solution-kit/
-├─ openspec/
-│  └─ openspec-agent-workflow-router/
-│     ├─ docs/
-│     ├─ prompts/
-│     └─ templates/
-│        └─ codex-skill/
-├─ context-engineering/
-│  ├─ docs/
-│  ├─ patterns/
-│  └─ templates/
-├─ prompt-engineering/
-│  ├─ docs/
-│  ├─ prompts/
-│  │  └─ structured-artifact-generation/
-│  └─ templates/
-├─ agent-design/
-│  └─ tool-schema-routing/
-│     ├─ docs/
-│     ├─ patterns/
-│     └─ templates/
-├─ agent-workflows/
-│  ├─ openspec-multi-agent-lifecycle/
-│  └─ workflow-artifact-shared-state-handoff/
-│     ├─ docs/
-│     ├─ examples/
-│     │  └─ generic-feature-change/
-│     ├─ patterns/
-│     ├─ prompts/
-│     ├─ schemas/
-│     └─ templates/
-├─ agent-thoughts/
-│  ├─ ai-agent-basics/
-│  └─ ai-software-development/
-└─ shared/
-```
+| 方向 | 核心内容 | 阅读入口 |
+| --- | --- | --- |
+| OpenSpec / SDD | 规范驱动开发、阶段路由、规划与审查、实现验收与归档 | [OpenSpec 工作流路由](./openspec/openspec-agent-workflow-router/README-zh-TW.md) |
+| Context Engineering | 上下文路由、渐进式披露、RAG、记忆设计、Runtime 与治理 | [上下文工程](./context-engineering/README-zh-TW.md) |
+| Prompt Engineering | Prompt 契约、结构化产物生成、注入防护、评估与版本管理 | [Prompt 工程](./prompt-engineering/README-zh-TW.md)、[结构化产物生成](./prompt-engineering/prompts/structured-artifact-generation/) |
+| Agent Design | Tool Schema、Tool Contract、能力路由、权限边界与评测 | [Agent 设计](./agent-design/README-zh-TW.md)、[Tool Schema 与 Routing](./agent-design/tool-schema-routing/README-zh-TW.md) |
+| Agent Workflows | 多 Agent 生命周期、共享工作状态、结构化交接与协作流程 | [OpenSpec 多 Agent 生命周期](./agent-workflows/openspec-multi-agent-lifecycle/)、[共享状态与结构化交接](./agent-workflows/workflow-artifact-shared-state-handoff/README-zh-TW.md) |
+| Agent Thoughts | AI Agent 基础认知、操作使用与 AI 软件开发心得 | [AI Agent 基础认知与操作](./agent-thoughts/ai-agent-basics/)、[AI 软件开发心得](./agent-thoughts/ai-software-development/) |
+| 共享规则 | 跨角色、跨流程重复使用的规则文档 | [共享规则目录](./shared/) |
 
 各类内容有明确分工：
 
