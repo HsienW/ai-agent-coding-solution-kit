@@ -1,6 +1,6 @@
 # [AI Agent] 不用技術名詞，你能說清楚 Harness 跟 Runtime 是什麼嗎?
 
-[English](./01-AI-Agent-Harness-and-Runtime-Explained-Without-Jargon.md) | [繁體中文](./01-AI-Agent-不用技術名詞，你能說清楚-Harness-跟-Runtime-是什麼嗎.md) | [简体中文](./01-AI-Agent-不用技术名词，你能说清楚-Harness-和-Runtime-是什么吗.md)
+[English](./01-AI-Harness-Runtime-Jargon-Free.md) | [繁體中文](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md) | [简体中文](./01-AI-Harness-Runtime-Jargon-Free.zh-CN.md)
 
 > 如果你回答不出來或答案有模糊點，這個庫可以幫助你更清晰的區分兩者
 

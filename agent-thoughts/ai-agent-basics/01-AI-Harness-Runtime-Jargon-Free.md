@@ -1,6 +1,6 @@
 # [AI Agent] Without Technical Jargon Can You Clearly Explain Harness and Runtime?
 
-[English](./01-AI-Agent-Harness-and-Runtime-Explained-Without-Jargon.md) | [繁體中文](./01-AI-Agent-不用技術名詞，你能說清楚-Harness-跟-Runtime-是什麼嗎.md) | [简体中文](./01-AI-Agent-不用技术名词，你能说清楚-Harness-和-Runtime-是什么吗.md)
+[English](./01-AI-Harness-Runtime-Jargon-Free.md) | [繁體中文](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md) | [简体中文](./01-AI-Harness-Runtime-Jargon-Free.zh-CN.md)
 
 First things first! Can you answer this question clearly? I wrote this because I found that many developers don't understand the different roles and tasks of Harness and Runtime, so they just fill in the blanks with a lot of technical terms.
 
