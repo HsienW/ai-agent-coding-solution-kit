@@ -1,6 +1,6 @@
 # Agent Thoughts
 
-[English](./README.md)
+[English](./README.md) | [繁體中文](./README-zh-TW.md)
 
 這裡收錄 AI Agent 與 AI 軟體開發相關的技術文章和個人心得。
 

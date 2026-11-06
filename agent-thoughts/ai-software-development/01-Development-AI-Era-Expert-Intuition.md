@@ -16,9 +16,9 @@ Readers unfamiliar with **Expert Intuition** can consult these academic definiti
 
 This article will not pursue an academic discussion of the term. It will offer an initial account of **“expert intuition when software engineering enters a business setting.”** First, look at this image
 
-![Expert intuition in the AI spotlight](../assets/agent-thoughts/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
+![Expert intuition in the AI spotlight](../assets/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
 
-AI Expert Intuition
+#### AI Expert Intuition
 
 To complete a software development project and put it to work in a business setting, Coding is only part of the job (the area illuminated by the flashlight in the image). The full job also calls for **architecture design, error diagnosis, trade-offs, upstream and downstream integration, release criteria, version control, and conversion analysis (the areas outside the light in the image)**, as well as the long-term evolution, collaboration, Schedule, strategy, evaluation, and profitability that business needs demand. That does not even cover an understanding of a business’s gray areas and unwritten rules. AI cannot currently do all this, yet this is precisely where software creates value in the human world.
 
@@ -28,7 +28,7 @@ In **software engineering**, expert intuition means the ability to achieve “co
 
 > ***Expert Intuition in Software Engineering = Architecture Design + Business Experience***
 
-![Expert intuition connects a full range of capabilities](../assets/agent-thoughts/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
+![Expert intuition connects a full range of capabilities](../assets/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
 
 #### **Architecture Design**
 
@@ -53,7 +53,7 @@ I break down the soft skills that are truly scarce in the AI era one step furthe
 
 > ***The Ability to Move the Current State Toward the Desired Outcome = Expert Intuition + Leadership Without Authority***
 
-![Roadmap from expert intuition to business impact](../assets/agent-thoughts/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
+![Roadmap from expert intuition to business impact](../assets/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
 
 #### **Leadership Without Authority**
 

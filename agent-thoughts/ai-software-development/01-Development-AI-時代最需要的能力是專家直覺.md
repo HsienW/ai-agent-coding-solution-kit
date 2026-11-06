@@ -15,9 +15,9 @@
 
 本篇不會展開名詞學術討論，只會聚焦在真實的「軟體工程進入業務場景的專家直覺」初步說明，先看以下這張圖
 
-![Expert intuition in the AI spotlight](../assets/agent-thoughts/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
+![Expert intuition in the AI spotlight](../assets/ai-software-development/01-Expert-Intuition-in-the-AI-Spotlight.webp)
 
-AI Expert Intuition
+#### AI Expert Intuition
 
 要完成一項軟體開發並落實到業務場景，Coding 只是佔其中一部分而已 (圖中手電筒照亮的區域)，更完整的是需要有 架構設計、錯誤定位、方案取捨、上下游串接、發佈基準、版本控制、轉換分析 (圖中光亮以外的部分) 等各種商業需求所產生的長期演進、協作、Schedule、策略、評估、營利，更不用說對於業務灰色規則的理解，這些是目前 AI 無法完成的，但恰恰是軟體在人類世界的存在的收益來源。
 
@@ -27,7 +27,7 @@ AI Expert Intuition
 
 > ***軟體工程的專家直覺 = 架構設計 + 業務經驗***
 
-![Expert intuition connects a full range of capabilities](../assets/agent-thoughts/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
+![Expert intuition connects a full range of capabilities](../assets/ai-software-development/02-Expert-Intuition-Connecting-a-Full-Range-of-Capabilities.webp)
 
 #### 架構設計
 
@@ -52,7 +52,7 @@ AI 時代真正稀缺的軟實力再往下精進，我拆分為:
 
 > ***把現況拉向期望的能力 = 專家直覺 + 無權領導力***
 
-![Roadmap from expert intuition to business impact](../assets/agent-thoughts/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
+![Roadmap from expert intuition to business impact](../assets/ai-software-development/03-Roadmap-from-Expert-Intuition-to-Business-Impact.webp)
 
 #### 無權領導力
 
