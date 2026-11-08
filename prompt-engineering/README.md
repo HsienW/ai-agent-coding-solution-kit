@@ -1,6 +1,8 @@
 # Prompt Engineering for AI Agents
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-0969da?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 A reusable Prompt Engineering reference project for turning prompt text into versioned, evaluable, releasable, observable, and reversible engineering assets.
 

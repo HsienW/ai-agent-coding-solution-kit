@@ -1,6 +1,8 @@
 # AI Agent Prompt Engineering
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 這是一套可重用的 Prompt Engineering 參考工程，用來把提示詞文字整理成可版本化、可評估、可發布、可觀測、可回復的工程資產。
 
