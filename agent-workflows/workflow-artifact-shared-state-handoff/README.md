@@ -1,6 +1,8 @@
 # Artifact-based shared state and structured handoff
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-0969da?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 > Moving from manual context transfer to verifiable, persistent, and orchestrated multi-agent coding workflows.
 
@@ -128,9 +130,9 @@ Public frameworks and protocols share similar ideas around shared state, artifac
 6. [`patterns/README.md`](patterns/README.md)  
    Map the design to established patterns such as Blackboard, Repository, State Machine, and Process Manager.
 
-## First batch scope
+## Documentation and engineering assets
 
-This first batch focuses on knowledge and architecture. It does not provide formal schemas, prompts, or an executable orchestrator yet. Future engineering assets can use this layout:
+The architecture documents are accompanied by schemas, role prompts, templates, and examples for integrating the workflow. The related assets are organized as follows:
 
 ```text
 artifact-shared-state-handoff/
