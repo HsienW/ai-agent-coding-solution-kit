@@ -1,6 +1,8 @@
 # [AI Agent] Without Technical Jargon Can You Clearly Explain Harness and Runtime?
 
-[English](./01-AI-Harness-Runtime-Jargon-Free.md) | [繁體中文](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md) | [简体中文](./01-AI-Harness-Runtime-Jargon-Free.zh-CN.md)
+[![English](https://img.shields.io/badge/English-0969da?style=for-the-badge)](./01-AI-Harness-Runtime-Jargon-Free.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./01-AI-Harness-Runtime-Jargon-Free.zh-CN.md)
 
 First things first! Can you answer this question clearly? I wrote this because I found that many developers don't understand the different roles and tasks of Harness and Runtime, so they just fill in the blanks with a lot of technical terms.
 
