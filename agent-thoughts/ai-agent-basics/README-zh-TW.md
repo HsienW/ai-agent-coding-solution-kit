@@ -5,3 +5,7 @@
 [![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 收錄 AI Agent 的基本概念、操作方式，以及日常使用時的心得。
+
+## 文章
+
+- [不用技術名詞，你能說清楚 Harness 跟 Runtime 是什麼嗎?](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md)

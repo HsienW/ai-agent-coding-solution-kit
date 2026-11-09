@@ -1,6 +1,8 @@
 # [AI Agent] 不用技术名词，你能说清楚 Harness 和 Runtime 是什么吗？
 
-[English](./01-AI-Harness-Runtime-Jargon-Free.md) | [繁體中文](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md) | [简体中文](./01-AI-Harness-Runtime-Jargon-Free.zh-CN.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./01-AI-Harness-Runtime-Jargon-Free.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./01-AI-Harness-Runtime-Jargon-Free.zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-0969da?style=for-the-badge)](./01-AI-Harness-Runtime-Jargon-Free.zh-CN.md)
 
 > 如果你一时答不上来，或者觉得两者的区别还有点模糊，这个仓库可以帮你分清楚。
 
