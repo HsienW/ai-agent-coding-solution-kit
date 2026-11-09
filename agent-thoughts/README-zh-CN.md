@@ -6,5 +6,5 @@
 
 这里收录 AI Agent 与 AI 软件开发相关的技术文章和个人心得。
 
-- [AI Agent 基础认知与操作](./ai-agent-basics/)：基本概念、操作方式与使用经验。
-- [AI 在软件开发中的心得](./ai-software-development/)：开发过程中使用 AI 的经验与心得。
+- [AI Agent 基础认知与操作](./ai-agent-basics/README-zh-CN.md)：基本概念、操作方式与使用经验。
+- [AI 在软件开发中的心得](./ai-software-development/README-zh-CN.md)：开发过程中使用 AI 的经验与心得。
