@@ -1,6 +1,8 @@
 # AI Agent 上下文工程
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 一套以 TypeScript 為優先、用於選擇、組裝、傳遞、評估與治理 AI Agent 上下文的參考架構。
 

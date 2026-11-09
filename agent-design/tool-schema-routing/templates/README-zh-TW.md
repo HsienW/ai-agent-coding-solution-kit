@@ -1,6 +1,8 @@
 # Tool Schema 與 Routing 模板
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 以下模板可直接複製修改，且不綁定特定 Agent Framework。
 

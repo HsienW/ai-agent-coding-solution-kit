@@ -1,6 +1,8 @@
 # Agent Design
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 一套不綁定特定框架的 AI Agent 設計方法、契約、模式與營運實踐集合，目標是建立可控、可評測、可治理的 Agent 系統。
 

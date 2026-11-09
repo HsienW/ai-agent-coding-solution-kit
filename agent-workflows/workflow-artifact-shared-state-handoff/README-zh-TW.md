@@ -1,6 +1,8 @@
 # Artifact-based Shared State + Structured Handoff
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 > 從人工搬運上下文，演進到可驗證、可持久化、可編排的多 Agent Coding Workflow。
 
@@ -128,9 +130,9 @@ Prompt、Skill、AGENTS.md 或其他規則資產可以降低重複指令，但�
 6. [`patterns/README-zh-TW.md`](patterns/README-zh-TW.md)  
    將整套設計映射到 Blackboard、Repository、State Machine、Process Manager 等經典模式。
 
-## 第一批文章涵蓋範圍
+## 文件與工程資產
 
-本批內容集中在知識與架構，不提供正式 Schema、Prompt 或可執行 Orchestrator。後續工程資產可以沿用以下目錄：
+架構文件搭配 Schema、角色 Prompt、模板與範例，供整合工作流時使用。相關資產位於以下目錄：
 
 ```text
 artifact-shared-state-handoff/

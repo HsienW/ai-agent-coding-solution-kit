@@ -1,6 +1,8 @@
 # Pattern mapping: multi-agent shared state and handoff
 
-[English](./README.md) | [繁體中文](./README-zh-TW.md)
+[![English](https://img.shields.io/badge/English-0969da?style=for-the-badge)](./README.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-555555?style=for-the-badge)](./README-zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./README-zh-CN.md)
 
 Artifact-based Shared State and Structured Handoff are not a new category of architecture problem. They combine several established patterns to handle shared working state, ownership transfer, long-running routing, failure loops, persistence, artifact references, history, snapshots, query efficiency, human approval, and irreversible operations.
 
