@@ -1,6 +1,8 @@
 # [Development] AI 時代最需要的能力是專家直覺（Expert Intuition）
 
-[English](./01-Dev-AI-Expert-Intuition.md) | [繁體中文](./01-Dev-AI-Expert-Intuition.zh-TW.md) | [简体中文](./01-Dev-AI-Expert-Intuition.zh-CN.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./01-Dev-AI-Expert-Intuition.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./01-Dev-AI-Expert-Intuition.zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./01-Dev-AI-Expert-Intuition.zh-CN.md)
 
 我想使用 AI 的人會特別有感，AI 把大量重復勞動工作能更高效率的完成。甚至具有一定的推理性跟猜測性，可以幫人類完成一部分具備「創造和模仿」的工作。這也讓過去被認為「快速完成產出」的重要性降低，並讓真正能業務落實或者說完整的「把現況拉向期望」的軟實力重要性上升。
 
