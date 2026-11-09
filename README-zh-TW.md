@@ -31,7 +31,7 @@
 | Prompt Engineering | Prompt 契約、結構化產物生成、注入防護、評估與版本管理 | [Prompt 工程](./prompt-engineering/README-zh-TW.md)、[結構化產物生成](./prompt-engineering/prompts/structured-artifact-generation/) |
 | Agent Design | Tool Schema、Tool Contract、能力路由、權限邊界與評測 | [Agent 設計](./agent-design/README-zh-TW.md)、[Tool Schema 與 Routing](./agent-design/tool-schema-routing/README-zh-TW.md) |
 | Agent Workflows | 多 Agent 生命週期、共享工作狀態、結構化交接與協作流程 | [OpenSpec 多 Agent 生命週期](./agent-workflows/openspec-multi-agent-lifecycle/)、[共享狀態與結構化交接](./agent-workflows/workflow-artifact-shared-state-handoff/README-zh-TW.md) |
-| Agent Thoughts | AI Agent 基礎認知、操作使用與 AI 軟體開發心得 | [AI Agent 基礎認知與操作](./agent-thoughts/ai-agent-basics/)、[AI 軟體開發心得](./agent-thoughts/ai-software-development/) |
+| Agent Thoughts | AI Agent 基礎認知、操作使用與 AI 軟體開發心得 | [AI Agent 基礎認知與操作](./agent-thoughts/ai-agent-basics/README-zh-TW.md)、[AI 軟體開發心得](./agent-thoughts/ai-software-development/README-zh-TW.md) |
 | 共享規則 | 跨角色、跨流程重複使用的規則文件 | [共享規則目錄](./shared/) |
 
 各類內容有明確分工：
