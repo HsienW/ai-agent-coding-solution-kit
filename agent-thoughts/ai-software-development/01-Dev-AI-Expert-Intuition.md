@@ -49,7 +49,7 @@ When software enters a business domain and becomes a development task, the work 
 2. **Release timing:** In what real-world setting will this requirement be released? At the simplest level, could you release it for Christmas or Black Friday and use people’s expected buying behavior to increase business revenue?
 3. **Past disasters:** Avoid changes like those that caused disasters before. For example: when a campaign suddenly brings in many more users, the APP must not crash, the Server must not become overloaded, and duplicate actions or orders must not appear. An open-source provider might also change something and cause a disaster for downstream teams using its Tool. One example is [the Ant-design Christmas Easter egg disaster](https://github.com/ant-design/ant-design/issues/13848).
 
-### Advancing Expert Intuition**:** The Ability to Move the Current State Toward the Desired Outcome
+### Advancing Expert Intuition **:** The Ability to Move the Current State Toward the Desired Outcome
 
 I break down the soft skills that are truly scarce in the AI era one step further:
 
