@@ -1,26 +1,24 @@
 # [AI Agent] Prompt 怎麼管理？Prompt Engineering 怎麼做
 
-[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](./02-Prompt-Engineering-Packages.md)
-[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](./02-Prompt-Engineering-Packages.zh-TW.md)
-[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](./02-Prompt-Engineering-Packages.zh-CN.md)
+[![English](https://img.shields.io/badge/English-555555?style=for-the-badge)](02-Prompt-Engineering-Phase1.md)
+[![繁體中文](https://img.shields.io/badge/繁體中文-0969da?style=for-the-badge)](02-Prompt-Engineering-Phase1.zh-TW.md)
+[![简体中文](https://img.shields.io/badge/简体中文-555555?style=for-the-badge)](02-Prompt-Engineering-Phase1.zh-CN.md)
 
 [prompt-engineering](../../prompt-engineering/)
 
 > Prompt 沒有管理跟版本控制的話，就只是一段段零散的文字描述而已，很免洗用完即丟，但失去了長期的維護意義，更不用說多人共享了。
 
-前面在做 Multi-Agent 時，我把一次 Development Flow 拆成 Plan、Implement、Review，讓不同 Agent 各自處理一段工作，再用 Shared State 保存階段結論與 Handoff；導入 OpenSpec 之後，Change 也開始有 Proposal、Design、Tasks 與固定的執行順序。這兩件事做完，Agent 怎麼分工、開發怎麼照規格往下走，多少已經有了可以重複使用的結構。
-
-但實際繼續做，很快又會碰到另一個問題：每個 Agent 使用的 Prompt，可能還是一份 Markdown，甚至只是聊天視窗裡的一段文字。
-
-一個人在 Local 試驗時，其實可以跑。Prompt 寫完，丟給 Codex / Claude，看結果不好就再補一條 Rule，輸出格式不對就加一句「請只回傳 JSON」。然而當同一份 Prompt 要交給多個 Agent、多人一起修改，或開始進入正式 Workflow，問題是改了什麼、影響哪些 Case、現在 Production 跑的是哪一版，以及出事時能不能回到上一版。
+- 開發上一個很實際的問題：每個 Agent 使用的 Prompt，可能是一份 Markdown，甚至只是聊天視窗裡的一段文字。
+一個人在 Local 試驗時，其實可以跑。Prompt 寫完，丟給 Codex / Claude，看結果不好就再補一條 Rule，輸出格式不對就加一句「請只回傳 JSON」。
+- 然而當同一份 Prompt 要交給多個 Agent、多人一起修改，或開始進入正式 Workflow，問題是改了什麼、影響哪些 Case、現在 Production 跑的是哪一版，以及出事時能不能回到上一版。
 
 所以這篇你會看到的是我把 Prompt 從單一文字整理成工程資產的 Phase1 紀錄，內容會看到以下：
 
-1. 為什麼 Prompt 寫完之後還需要管理
-2. 我怎麼理解 Prompt Engineering 的工程邊界
-3. Prompt Package 的 Phase1 怎麼實作
-4. 一次 Prompt Change 要怎麼 Review、Release 與 Rollback
-5. Prompt 管理做到什麼程度，才算完成 Phase1
+  1. 為什麼 Prompt 寫完之後還需要管理
+  2. 我怎麼理解 Prompt Engineering 的工程邊界
+  3. Prompt Package 的 Phase1 怎麼實作
+  4. 一次 Prompt Change 要怎麼 Review、Release 與 Rollback
+  5. Prompt 管理做到什麼程度，才算完成 Phase1
 
 ## 為什麼 Prompt 寫完之後還需要管理
 
@@ -32,46 +30,46 @@
 
 ### (1) 修好一個 Case，可能又弄壞另一個 Case
 
-Prompt 最常見的修改方式，就是看到一個錯誤便補一條指令。Agent 漏了測試，就加上「完成後必須執行測試」；Reviewer 回傳太多文字，就加上「只輸出指定 JSON」。短期看來每一條都有理由，眼前的 Case 也可能真的變好。
+- Prompt 最常見的修改方式，就是看到一個錯誤便補一條指令。Agent 漏了測試，就加上「完成後必須執行測試」；Reviewer 回傳太多文字，就加上「只輸出指定 JSON」。短期看來每一條都有理由，眼前的 Case 也可能真的變好。
 
-麻煩在於，LLM 的輸出不是一般 Function。Prompt 改了一句話，可能同時改變模型對優先順序、輸出長度、欄位選擇與 Tool 使用方式的理解。原本錯誤的 Case 通過了，不代表原本正常的 Case 還正常。
+- 麻煩在於，LLM 的輸出不是一般 Function。Prompt 改了一句話，可能同時改變模型對優先順序、輸出長度、欄位選擇與 Tool 使用方式的理解。原本錯誤的 Case 通過了，不代表原本正常的 Case 還正常。
 
-如果沒有一組固定的 Eval Case，每次修改就只剩人工重新問幾次，再憑感覺判斷「這版好像比較穩」。只要換一個人、換一個 Session，判斷基準也跟著換了。最後 Prompt 越補越長，但沒有人能回答哪一條 Rule 解決了什麼問題，也不敢刪掉任何一句。
+- 如果沒有一組固定的 Eval Case，每次修改就只剩人工重新問幾次，再憑感覺判斷「這版好像比較穩」。只要換一個人、換一個 Session，判斷基準也跟著換了。最後 Prompt 越補越長，但沒有人能回答哪一條 Rule 解決了什麼問題，也不敢刪掉任何一句。
 
 ### (2) 寫了「輸出 JSON」，不等於有 Output Contract
 
-我最初也會直接在 Prompt 裡描述輸出格式，例如要求模型回傳 `status`、`summary` 和 `issues`，然後補一個 JSON Example。這對 Demo 通常夠用，但接進 Workflow 後就不一定了。
+- 我最初也會直接在 Prompt 裡描述輸出格式，例如要求模型回傳 `status`、`summary` 和 `issues`，然後補一個 JSON Example。這對 Demo 通常夠用，但接進 Workflow 後就不一定了。
 
-下游還需要知道哪些 Field 必填、型別是什麼、狀態值允許哪些 Enum，以及缺少資料時該回傳 Error 還是繼續猜。這些內容若藏在自然語言裡，人看起來大概懂，程式卻沒有穩定的方法驗證。即使 JSON 結構正確，`status=ready` 時是否一定要有 Validation Evidence，這種跨 Field 的 Domain Rule 也未必正確。
+- 下游還需要知道哪些 Field 必填、型別是什麼、狀態值允許哪些 Enum，以及缺少資料時該回傳 Error 還是繼續猜。這些內容若藏在自然語言裡，人看起來大概懂，程式卻沒有穩定的方法驗證。即使 JSON 結構正確，`status=ready` 時是否一定要有 Validation Evidence，這種跨 Field 的 Domain Rule 也未必正確。
 
-所以只要求 JSON，解決的是 Parse 問題，還沒解決 Contract 與 Domain Validity。
+**所以只要求 JSON，解決的是 Parse 問題，還沒解決 Contract 與 Domain Validity。**
 
 ### (3) Prompt、Example、Schema 各跑各的版本
 
-當 Prompt 開始有結構之後，通常還會長出 Example、Schema、Validator 與 Runtime Config。如果這些資產散落在不同 Folder，便很容易發生 Prompt 已經要求新版欄位，Example 還停在舊格式；Schema 加了 Required Field，Prompt 卻完全沒有告訴模型要怎麼取得；Local 使用剛修改的檔案，CI 或 Production 解析到的又是另一份版本。
+- 當 Prompt 開始有結構之後，通常還會長出 Example、Schema、Validator 與 Runtime Config。如果這些資產散落在不同 Folder，便很容易發生 Prompt 已經要求新版欄位，Example 還停在舊格式；Schema 加了 Required Field，Prompt 卻完全沒有告訴模型要怎麼取得；Local 使用剛修改的檔案，CI 或 Production 解析到的又是另一份版本。
 
-這時候就算 Git 有保存 Prompt Diff，仍然很難重現某一次 Agent Execution。因為真正影響結果的不是單一 `prompt.md`，而是當時組在一起的 Prompt、Schema、Example、Model Config 與 Validator。
+- 這時候就算 Git 有保存 Prompt Diff，仍然很難重現某一次 Agent Execution。因為真正影響結果的不是單一 `prompt.md`，而是當時組在一起的 Prompt、Schema、Example、Model Config 與 Validator。
 
 ### (4) Prompt 一改就 Globle 生效
 
-不少專案把 Prompt 當成 Configuration，修改後跟著 App 一起 Deploy，或直接在管理介面按下 Publish。若只是內部實驗還好；當 Prompt 會產生 Artifact、決定 Tool Intent，甚至影響下一個 Agent 的工作，一次看似很小的修改也可能把錯誤帶到整段 Flow。
+- 不少專案把 Prompt 當成 Configuration，修改後跟著 App 一起 Deploy，或直接在管理介面按下 Publish。若只是內部實驗還好；當 Prompt 會產生 Artifact、決定 Tool Intent，甚至影響下一個 Agent 的工作，一次看似很小的修改也可能把錯誤帶到整段 Flow。
 
-而且 Rollback 若只換回舊的 `prompt.md`，也不一定真的回到舊行為。舊 Prompt 配上新 Schema，或新 Prompt 配上舊 Validator，都可能產生一個之前根本沒有測過的組合。這也是我後來認為 Prompt 應該用 Package 管理的主要原因：發布與回復的單位必須一致。
+- 而且 Rollback 若只換回舊的 `prompt.md`，也不一定真的回到舊行為。舊 Prompt 配上新 Schema，或新 Prompt 配上舊 Validator，都可能產生一個之前根本沒有測過的組合。這也是我後來認為 Prompt 應該用 Package 管理的主要原因：發布與回復的單位必須一致。
 
 ## 我怎麼理解 Prompt Engineering 的工程邊界
 
 ### (1) Prompt 是模型輸入協議
 
-Prompt 當然還是文字，但進入 Agent Workflow 後，它同時描述了一組模型輸入協議。除了「請做什麼」，還會包含 Role 與 Responsibility Boundary、允許進入的 Variable、External Content 的 Trust Boundary、可以使用哪些 Tool、輸出形狀、禁止行為、失敗時怎麼處理，以及完成前要做哪些 Verification。
+- Prompt 當然還是文字，但進入 Agent Workflow 後，它同時描述了一組模型輸入協議。除了「請做什麼」，還會包含 Role 與 Responsibility Boundary、允許進入的 Variable、External Content 的 Trust Boundary、可以使用哪些 Tool、輸出形狀、禁止行為、失敗時怎麼處理，以及完成前要做哪些 Verification。
 
-這個想法跟 API Contract 有點像，但不能完全畫上等號。模型的行為仍有機率分布，同一份輸入不保證每次逐字相同，所以還得補上 Evaluation、Trace、Release Gate 與 Rollback。團隊要看得見 Prompt 改了什麼，可以用固定 Case 驗證，知道哪一版正在執行，發布失敗也能回復。
+- 這個想法跟 API Contract 有點像，但不能完全畫上等號。模型的行為仍有機率分布，同一份輸入不保證每次逐字相同，所以還得補上 Evaluation、Trace、Release Gate 與 Rollback。團隊要看得見 Prompt 改了什麼，可以用固定 Case 驗證，知道哪一版正在執行，發布失敗也能回復。
 
-Prompt Engineering 與 Context Engineering 的邊界也要分清楚。以我現在的切法，Context Engineering 決定模型這次應該看到什麼；Prompt Engineering 則決定模型如何使用這些資料，以及最後必須交出什麼結果。
+- Prompt Engineering 與 Context Engineering 的邊界也要分清楚。以我現在的切法，Context Engineering 決定模型這次應該看到什麼；Prompt Engineering 則決定模型如何使用這些資料，以及最後必須交出什麼結果。
 
 > Context Engineering 決定模型該看什麼。
 > Prompt Engineering 決定模型該如何使用它。
 
-以 Multi-Agent 的 Reviewer 為例，Git Diff 與 Test Evidence 屬於 Context；要檢查什麼、什麼情況算 Blocker、輸出哪些 Field，則由 Prompt 與 Output Contract 規定。兩者會在 Runtime 組合，但不要再把所有資料和規則塞回同一份超大 Prompt。
+**以 Multi-Agent 的 Reviewer 為例，Git Diff 與 Test Evidence 屬於 Context；要檢查什麼、什麼情況算 Blocker、輸出哪些 Field，則由 Prompt 與 Output Contract 規定。兩者會在 Runtime 組合，但不要再把所有資料和規則塞回同一份超大 Prompt。**
 
 ## Prompt Package 的 Phase1 我怎麼實作
 
@@ -84,9 +82,9 @@ prompts/
 └─ structured-artifact-generation.md
 ```
 
-Role、輸入說明、工作步驟、輸出格式、Few-shot Example 和各種補丁 Rule 全在同一份檔案。它的優點是容易開始，人也可以直接打開閱讀；缺點則是所有東西耦合在一起。Reviewer 看到某一段文字被修改，不容易知道 Input Contract 有沒有改、Example 是否仍然成立，以及這次 Change 應該用哪些 Case 驗證。
+- Role、輸入說明、工作步驟、輸出格式、Few-shot Example 和各種補丁 Rule 全在同一份檔案。它的優點是容易開始，人也可以直接打開閱讀；缺點則是所有東西耦合在一起。Reviewer 看到某一段文字被修改，不容易知道 Input Contract 有沒有改、Example 是否仍然成立，以及這次 Change 應該用哪些 Case 驗證。
 
-Phase1 不需要立刻建一套 Prompt Platform，我先把同一個 Capability 需要的資產放到同一個 Folder，讓它們可以一起 Review、一起 Release。
+- Phase1 不需要立刻建一套 Prompt Platform，我先把同一個 Capability 需要的資產放到同一個 Folder，讓它們可以一起 Review、一起 Release。
 
 ### (2) 修改後的做法：Prompt Package
 
@@ -111,7 +109,7 @@ structured-artifact-generation/
 
 `prompt.md` 保存人可以閱讀與 Review 的 Instruction；`prompt.yaml` 記錄版本與資產 Reference；Input / Output Schema 定義進出 Package 的資料結構。`examples.yaml` 放少量經過 Review 的 Few-shot Cases，`eval-cases.yaml` 保存正常、Boundary 與 Failure Case，最後由 `prompt-lock.json` 記下實際使用的版本與 Content Hash。
 
-需要額外 Domain Rule 時，可以再加入 `validators/`。這些檔案不一定每個 Package 第一天就要全部寫滿，但責任要先拆開，否則過一陣子還是會退回一份 Prompt 包辦所有事情。
+**需要額外 Domain Rule 時，可以再加入 `validators/`。這些檔案不一定每個 Package 第一天就要全部寫滿，但責任要先拆開，否則過一陣子還是會退回一份 Prompt 包辦所有事情。**
 
 ### (3) 先定義 Contract，再補完整 Instruction
 
@@ -284,6 +282,6 @@ Prompt Engineering 很容易一路長成 Platform 專案，但 Phase1 的目標�
 
 ### (2) Phase1 後面還能繼續做什麼
 
-這篇先停在單一 Prompt Package 的管理。再往後走，還會碰到 Domain / Skill / Task Router 怎麼決定使用哪一份 Prompt、Prompt Contamination 與 Prompt Injection 怎麼分、Evaluation Dataset 要如何累積，以及 Multi-Agent 每一個 Flow Node 怎麼 Pin 到精確版本。
+- 這篇先停在單一 Prompt Package 的管理。再往後走，還會碰到 Domain / Skill / Task Router 怎麼決定使用哪一份 Prompt、Prompt Contamination 與 Prompt Injection 怎麼分、Evaluation Dataset 要如何累積，以及 Multi-Agent 每一個 Flow Node 怎麼 Pin 到精確版本。
 
-另外還有 Trace、成本、Canary Policy、權限與 Audit。這些全塞進 Phase1，只會先做出一個很完整、卻沒有任何 Prompt 真正在用的平台。先挑一個高頻 Capability，讓 Package、Evaluation、Release 與 Rollback 跑過一輪，再決定下一層治理要做到哪裡，會比較接近我目前實際導入 AI Agent Workflow 的順序。
+- 另外還有 Trace、成本、Canary Policy、權限與 Audit。這些全塞進 Phase1，只會先做出一個很完整、卻沒有任何 Prompt 真正在用的平台。先挑一個高頻 Capability，讓 Package、Evaluation、Release 與 Rollback 跑過一輪，再決定下一層治理要做到哪裡，會比較接近我目前實際導入 AI Agent Workflow 的順序。
